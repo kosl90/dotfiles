@@ -1,0 +1,34 @@
+[user]
+	name = Lee
+	email = kos1990l@gmail.com
+[github]
+	user = kosl90
+	token = ea54419dc65b101799879bc347db32c7
+[color]
+	ui = true
+[alias]
+	st = status
+	unstage = reset HEAD --
+	unmodify = checkout --
+	ci = commit
+	cm = commit -m
+	ca = commit -am
+	cam = commit --amend -m
+	co = checkout
+	cb = checkout -b
+	br = branch
+	hist2 = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	size = cat-file -s
+	last = cat-file commit HEAD
+	merg = merge --no-ff
+	ls = ls-files
+	hist = log --oneline --graph --decorate
+[core]
+        #autocrlf = input
+	# for Windows user
+        #autocrlf = true
+        #safecrlf = true
+[core]
+	editor = vim

@@ -1,0 +1,31 @@
+--style=k&r
+
+
+-s4  # --indent=spaces=4
+--convert-tabs
+
+
+--indent-classes
+--indent-switches
+# --indent-namespaces
+--indent-labels
+--indent-preprocessor
+-Y  # indent C++ comment beginning cloumn one
+-m  # --min-conditional-indent, default indent at least 2 additional indents
+-M  # --max-instatement-indent, default 40 spaces
+
+
+-f  # insert empty line around header
+# -F  # insert empty line around header blocks and closing header
+--unpad-paren  # remove extra space padding around parenthesis
+--pad-header  # insert space padding after headers only(e.g. 'if', 'while')
+--add-brackets  # add brackets to unbracket one line conditional statements
+--pad-oper
+
+
+--align-pointer=type
+--lineend=linux
+--suffix=none  # no backup
+
+
+# -A3s4cCSLwYmMfUpHjk1z2n #-NF
