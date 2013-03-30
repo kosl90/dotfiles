@@ -45,7 +45,7 @@ export WIKIDATA=$MYWIKI/wikidata
 export DESK=$HOME/Desktop
 export NOTES=$HOME/Dropbox/notes
 
-export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven-3.0.4/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
+export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
 export PATH=$PATH:/opt/QtSDK/Desktop/Qt/4.8.1/gcc/bin:/opt/QtSDK/QtCreator/bin:/usr/local/sml/bin
 export EDITOR=vim
 export RSENSE_HOME=/opt/rsense
@@ -82,7 +82,7 @@ alias code_name='lsb_release -cs'
 alias release_version='lsb_release -rs'
 alias kill="kill -9"
 alias kall='killall -9'
-alias owd='xdg-open `pwd`'
+alias owd='xdg-open $(pwd)'
 alias goagent="python $GOAGENT_PATH/local/proxy.py"
 
 # alias for editor
@@ -127,9 +127,14 @@ vman() {
 
 # alias man='vman'
 alias man='cman'
-alias gh="git log --oneline --graph --decorate"
-alias gd="git diff"
+
+# alias for git
+alias glg="git log --graph --decorate"
+alias glo="git log --oneline --graph --decorate"
+alias gdf="git diff"
 alias gdc="git diff --cached"
+alias gcd='cd $(git rev-parse --show-toplevel)'
+alias gst="git status -sb"
 
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
