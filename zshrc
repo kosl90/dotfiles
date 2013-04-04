@@ -126,7 +126,7 @@ vman() {
 }
 
 # alias man='vman'
-alias man='cman'
+# alias man='cman'
 
 # alias for git
 alias glg="git log --graph --decorate"
