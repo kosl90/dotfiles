@@ -23,3 +23,5 @@
 	ls = ls-files
 [color "diff"]
 	whitespace = red reverse
+[credential]
+	helper = cache --timeout=36000
