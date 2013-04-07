@@ -126,7 +126,7 @@ vman() {
 }
 
 # alias man='vman'
-alias man='cman'
+# alias man='cman'
 
 # alias for git
 alias glg="git log --graph --decorate"
@@ -141,3 +141,4 @@ alias gst="git status -sb"
 export http_proxy="http://localhost:8087"
 alias g2d="cd $DESK"
 alias 关机='sudo poweroff'
+alias ack='ack-grep'
