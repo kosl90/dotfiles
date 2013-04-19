@@ -89,7 +89,12 @@ alias goagent="python $GOAGENT_PATH/local/proxy.py"
 # alias for editor
 alias gvim='gvim -f'
 alias gvi='gvim'
-alias em="emacs24 -nw"
+if which emacs24 > /dev/null
+then
+    alias em="emacs24 -nw"
+else
+    alias em="emacs -nw"
+fi
 
 # alias for Qt
 alias qp="qmake -project"
@@ -139,7 +144,8 @@ alias gst="git status -sb"
 
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
-export http_proxy="http://localhost:8087"
+# export http_proxy="http://localhost:8087"
 alias g2d="cd $DESK"
 alias 关机='sudo poweroff'
 alias ack='ack-grep'
+alias start-tray="(python /usr/share/deepin-system-tray/src/trayicon.py &)"
