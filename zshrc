@@ -149,3 +149,8 @@ alias g2d="cd $DESK"
 alias 关机='sudo poweroff'
 alias ack='ack-grep'
 alias start-tray="(python /usr/share/deepin-system-tray/src/trayicon.py &)"
+ulimit -c 1024000
+if [ ! -d "/tmp/core_files" ]
+then
+    mkdir /tmp/core_files
+fi
