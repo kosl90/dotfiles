@@ -96,6 +96,9 @@ alias qp="qmake -project"
 alias qm="qmake"
 alias qms="qmake -spec"
 alias qmc="qmake -spec unsupported/linux-clang"
+QT5PATH="/usr/local/Qt-5.0.2/"
+alias qp5="$QT5PATH/bin/qmake -project"
+alias qm5="$QT5PATH/bin/qmake -makefile"
 
 # alias for scons
 alias sc="scons -Q"
@@ -139,7 +142,11 @@ alias gst="git status -sb"
 
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
-export http_proxy="http://localhost:8087"
+# export http_proxy="http://localhost:8087"
 alias g2d="cd $DESK"
 alias 关机='sudo poweroff'
-alias ack='ack-grep'
+alias hub=~/src/tools/hub
+if which ack-grep > /dev/null
+then
+    alias ack="ack-grep"
+fi
