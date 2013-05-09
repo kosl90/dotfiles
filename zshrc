@@ -89,7 +89,12 @@ alias goagent="python $GOAGENT_PATH/local/proxy.py"
 # alias for editor
 alias gvim='gvim -f'
 alias gvi='gvim'
-alias em="emacs24 -nw"
+if which emacs24 > /dev/null
+then
+    alias em="emacs24 -nw"
+else
+    alias em="emacs -nw"
+fi
 
 # alias for Qt
 alias qp="qmake -project"
