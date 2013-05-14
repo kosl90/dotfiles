@@ -57,7 +57,7 @@ export PATH=$PATH:$GOOGLE_APPENGINE_PATH
 
 alias pyHTTPServ='python -m SimpleHTTPServer'
 alias wiki="cd $MYWIKI && gitit &; cd - "
-alias gdb='gdb --tui'
+# alias gdb='gdb --tui'
 alias python2=python2.7
 alias clr='rm -rf *.o a.out *.exe'
 
