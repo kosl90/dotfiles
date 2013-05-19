@@ -5,10 +5,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="kphoen"
+ZSH_THEME="kphoen"
 # ZSH_THEME='intheloop'
 # ZSH_THEME='juanghurtado'
-ZSH_THEME='candy'
+# ZSH_THEME='candy'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -101,6 +101,9 @@ alias qp="qmake -project"
 alias qm="qmake"
 alias qms="qmake -spec"
 alias qmc="qmake -spec unsupported/linux-clang"
+QT5PATH="/usr/local/Qt-5.0.2/"
+alias qp5="$QT5PATH/bin/qmake -project"
+alias qm5="$QT5PATH/bin/qmake -makefile"
 
 # alias for scons
 alias sc="scons -Q"
@@ -147,7 +150,9 @@ alias gst="git status -sb"
 # export http_proxy="http://localhost:8087"
 alias g2d="cd $DESK"
 alias 关机='sudo poweroff'
-alias ack='ack-grep'
+if which ack-grep > /dev/null
+then
+    alias ack="ack-grep"
 alias start-tray="(python /usr/share/deepin-system-tray/src/trayicon.py &)"
 ulimit -c 1024000
 if [ ! -d "/tmp/core_files" ]
