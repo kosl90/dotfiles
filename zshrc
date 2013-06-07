@@ -43,7 +43,7 @@ export SRC=$HOME/src
 export TOOLS=$SRC/tools
 export MYWIKI=$HOME/mywiki
 export WIKIDATA=$MYWIKI/wikidata
-export DESK=$HOME/Desktop
+export DESK=$(grep -i 'desktop' $HOME/.config/user-dirs.dirs | cut -d= -f2)
 export NOTES=$HOME/Dropbox/notes
 
 export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
@@ -148,7 +148,7 @@ alias gst="git status -sb"
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
 # export http_proxy="http://localhost:8087"
-alias g2d="cd $DESK"
+alias gdk="cd $DESK"
 alias 关机='sudo poweroff'
 alias hub=~/src/tools/hub
 if which ack-grep > /dev/null
