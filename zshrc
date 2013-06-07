@@ -77,6 +77,8 @@ alias pylabq='ipython --pylab=qt'
 
 alias dp='xdg-open'
 alias ls="ls -F --color=auto"
+alias l=ls
+alias lls=ls
 alias ll="ls -Flh --color=auto"
 alias psa="ps -ef"
 alias code_name='lsb_release -cs'
@@ -84,7 +86,8 @@ alias release_version='lsb_release -rs'
 alias kill="kill -9"
 alias kall='killall -9'
 alias owd='xdg-open $(pwd)'
-alias goagent="python $GOAGENT_PATH/local/proxy.py"
+alias goagent="python $HOME/GAE/goagent/local/proxy.py"
+alias goagent3="python3 $HOME/GAE/goagent/local/proxy.py"
 
 # alias for editor
 alias gvim='gvim -f'
@@ -159,3 +162,6 @@ if [ ! -d "/tmp/core_files" ]
 then
     mkdir /tmp/core_files
 fi
+
+alias synapse='(synapse -s &)'
+export WEBKIT_INSPECTOR_PATH=$HOME/webinspector/
