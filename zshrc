@@ -43,7 +43,7 @@ export SRC=$HOME/src
 export TOOLS=$SRC/tools
 export MYWIKI=$HOME/mywiki
 export WIKIDATA=$MYWIKI/wikidata
-export DESK=$HOME/Desktop
+export DESK=$(grep -i 'desktop' $HOME/.config/user-dirs.dirs | cut -d= -f2)
 export NOTES=$HOME/Dropbox/notes
 
 export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
@@ -104,9 +104,6 @@ alias qp="qmake -project"
 alias qm="qmake"
 alias qms="qmake -spec"
 alias qmc="qmake -spec unsupported/linux-clang"
-QT5PATH="/usr/local/Qt-5.0.2/"
-alias qp5="$QT5PATH/bin/qmake -project"
-alias qm5="$QT5PATH/bin/qmake -makefile"
 
 # alias for scons
 alias sc="scons -Q"
@@ -151,17 +148,20 @@ alias gst="git status -sb"
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
 # export http_proxy="http://localhost:8087"
-alias g2d="cd $DESK"
+alias gdk="cd $DESK"
 alias 关机='sudo poweroff'
+alias hub=~/src/tools/hub
 if which ack-grep > /dev/null
 then
     alias ack="ack-grep"
-alias start-tray="(python /usr/share/deepin-system-tray/src/trayicon.py &)"
+fi
+
 ulimit -c 1024000
 if [ ! -d "/tmp/core_files" ]
 then
     mkdir /tmp/core_files
 fi
 
+alias ddetray="(python /usr/share/deepin-system-tray/src/trayicon.py &)"
 alias synapse='(synapse -s &)'
 export WEBKIT_INSPECTOR_PATH=$HOME/webinspector/
