@@ -74,6 +74,12 @@ alias ipyq='ipython qtconsole'
 alias ipyn='ipython notebook'
 alias pylab='ipython --pylab'
 alias pylabq='ipython --pylab=qt'
+# alias for ipython3
+alias ipy3='ipython3'
+alias ipyq3='ipython3 qtconsole'
+alias ipyn3='ipython3 notebook'
+alias pylab3='ipython3 --pylab'
+alias pylabq3='ipython3 --pylab=qt'
 
 alias dp='xdg-open'
 alias ls="ls -F --color=auto"
