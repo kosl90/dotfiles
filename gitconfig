@@ -25,3 +25,7 @@
 	whitespace = red reverse
 [push]
 	default = current
+[mergetool "p4merge"]
+	cmd = p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"MERGED\"
+[merge]
+	tool = p4merge
