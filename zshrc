@@ -142,8 +142,16 @@ alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
-alias gcd='cd $(git rev-parse --show-toplevel)'
+# alias gcd=''
 alias gst="git status -sb"
+
+function gcd() {
+cd $(git rev-parse --show-toplevel)
+if [ "$1" != "" ]
+then
+    cd $1
+fi
+}
 
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
@@ -165,3 +173,7 @@ fi
 alias ddetray="(python /usr/share/deepin-system-tray/src/trayicon.py &)"
 alias synapse='(synapse -s &)'
 export WEBKIT_INSPECTOR_PATH=$HOME/webinspector/
+export DISPLAY=:0
+alias restartcompiz="(compiz --replaec&)"
+
+export ping='ping -c3'
