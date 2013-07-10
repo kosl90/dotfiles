@@ -151,8 +151,15 @@ alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
-alias gcd='cd $(git rev-parse --show-toplevel)'
 alias gst="git status -sb"
+function gcd() {
+    cd $(git rev-parse --show-toplevel)
+
+    if [ "$1" != "" ]
+    then
+        cd $1
+    fi
+}
 
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
