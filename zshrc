@@ -152,6 +152,7 @@ alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
 alias gst="git status -sb"
+
 function gcd() {
     if [ "$(git rev-parse --show-toplevel)" != "" ]
     then
@@ -162,14 +163,6 @@ function gcd() {
     then
         cd $1
     fi
-}
-
-function gcd() {
-cd $(git rev-parse --show-toplevel)
-if [ "$1" != "" ]
-then
-    cd $1
-fi
 }
 
 # source $ZSH/custom/incr*.zsh
