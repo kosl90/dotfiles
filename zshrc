@@ -74,6 +74,12 @@ alias ipyq='ipython qtconsole'
 alias ipyn='ipython notebook'
 alias pylab='ipython --pylab'
 alias pylabq='ipython --pylab=qt'
+# alias for ipython3
+alias ipy3='ipython3'
+alias ipyq3='ipython3 qtconsole'
+alias ipyn3='ipython3 notebook'
+alias pylab3='ipython3 --pylab'
+alias pylabq3='ipython3 --pylab=qt'
 
 alias dp='xdg-open'
 alias ls="ls -F --color=auto"
@@ -104,6 +110,9 @@ alias qp="qmake -project"
 alias qm="qmake"
 alias qms="qmake -spec"
 alias qmc="qmake -spec unsupported/linux-clang"
+QT5PATH="/usr/local/Qt-5.0.2/"
+alias qp5="$QT5PATH/bin/qmake -project"
+alias qm5="$QT5PATH/bin/qmake -makefile"
 
 # alias for scons
 alias sc="scons -Q"
@@ -142,8 +151,15 @@ alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
-# alias gcd=''
 alias gst="git status -sb"
+function gcd() {
+    cd $(git rev-parse --show-toplevel)
+
+    if [ "$1" != "" ]
+    then
+        cd $1
+    fi
+}
 
 function gcd() {
 cd $(git rev-parse --show-toplevel)
