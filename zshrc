@@ -153,7 +153,10 @@ alias gdf="git diff"
 alias gdc="git diff --cached"
 alias gst="git status -sb"
 function gcd() {
-    cd $(git rev-parse --show-toplevel)
+    if [ "$(git rev-parse --show-toplevel)" != "" ]
+    then
+        cd $(git rev-parse --show-toplevel)
+    fi
 
     if [ "$1" != "" ]
     then
