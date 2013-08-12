@@ -32,7 +32,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git extract pip urltools vundle python debian npm)
+plugins=(git extract pip urltools vundle python debian npm mercurial tmux node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,10 +50,10 @@ export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr
 export PATH=$PATH:/opt/QtSDK/Desktop/Qt/4.8.1/gcc/bin:/opt/QtSDK/QtCreator/bin:/usr/local/sml/bin
 export EDITOR=vim
 export RSENSE_HOME=/opt/rsense
-export GOOGLE_APPENGINE_PATH=$TOOLS/google_appengine/
-export GOAGENT_PATH=$GOOGLE_APPENGINE_PATH/goagent
+export GAE_PATH=$TOOLS/google_appengine/
+export GOAGENT_PATH=$GAE_PATH/goagent
 export DEEPIN=$SRC/deepin
-export PATH=$PATH:$GOOGLE_APPENGINE_PATH
+export PATH=$PATH:$GAE_PATH
 
 alias pyHTTPServ='python -m SimpleHTTPServer'
 alias wiki="cd $MYWIKI && gitit &; cd - "
@@ -74,6 +74,7 @@ alias ipyq='ipython qtconsole'
 alias ipyn='ipython notebook'
 alias pylab='ipython --pylab'
 alias pylabq='ipython --pylab=qt'
+
 # alias for ipython3
 alias ipy3='ipython3'
 alias ipyq3='ipython3 qtconsole'
@@ -118,6 +119,9 @@ alias qm5="$QT5PATH/bin/qmake -makefile"
 alias sc="scons -Q"
 alias scc="scons -c"
 
+# alias for vim
+alias vi=vim
+
 #alias time="/usr/bin/time -p"
 
 cman() {
@@ -152,15 +156,16 @@ alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
 alias gst="git status -sb"
+
 function gcd() {
     if [ "$(git rev-parse --show-toplevel)" != "" ]
     then
-        cd $(git rev-parse --show-toplevel)
-    fi
-
-    if [ "$1" != "" ]
-    then
-        cd $1
+        if [ "$1" != "" ]
+        then
+            cd "$(git rev-parse --show-toplevel)/$1"
+        else
+            cd $(git rev-parse --show-toplevel)
+        fi
     fi
 }
 
@@ -174,3 +179,9 @@ if which ack-grep > /dev/null
 then
     alias ack="ack-grep"
 fi
+
+alias synapse='(synapse -s &)'
+alias ping='ping -c3'
+alias tmux='tmux -2u'
+
+export DISPLAY=:0
