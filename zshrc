@@ -15,7 +15,7 @@ ZSH_THEME="kphoen"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -53,11 +53,10 @@ export RSENSE_HOME=/opt/rsense
 export GAE_PATH=$TOOLS/google_appengine/
 export GOAGENT_PATH=$GAE_PATH/goagent
 export DEEPIN=$SRC/deepin
-export PATH=$PATH:$GAE_PATH
+export PATH=$PATH:$GAE_PATH:$HOME/node_modules/.bin/
 
 alias pyHTTPServ='python -m SimpleHTTPServer'
 alias wiki="cd $MYWIKI && gitit &; cd - "
-# alias gdb='gdb --tui'
 alias python2=python2.7
 alias clr='rm -rf *.o a.out *.exe'
 
