@@ -50,10 +50,10 @@ export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr
 export PATH=$PATH:/opt/QtSDK/Desktop/Qt/4.8.1/gcc/bin:/opt/QtSDK/QtCreator/bin:/usr/local/sml/bin
 export EDITOR=vim
 export RSENSE_HOME=/opt/rsense
-export GOOGLE_APPENGINE_PATH=$TOOLS/google_appengine/
-export GOAGENT_PATH=$GOOGLE_APPENGINE_PATH/goagent
+export GAE_PATH=$HOME/GAE
+export GOAGENT_PATH=$GAE_PATH/goagent
 export DEEPIN=$SRC/deepin
-export PATH=$PATH:$GOOGLE_APPENGINE_PATH
+export PATH=$PATH:$GAE_PATH
 
 alias pyHTTPServ='python -m SimpleHTTPServer'
 alias wiki="cd $MYWIKI && gitit &; cd - "
@@ -93,8 +93,8 @@ alias release_version='lsb_release -rs'
 alias kill="kill -9"
 alias kall='killall -9'
 alias owd='xdg-open $(pwd)'
-alias goagent="python $HOME/GAE/goagent/local/proxy.py"
-alias goagent3="python3 $HOME/GAE/goagent/local/proxy.py"
+alias goagent="python $GOAGENT_PATH/local/proxy.py"
+alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
 
 # alias for editor
 alias gvim='gvim -f'
