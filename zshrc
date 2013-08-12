@@ -32,7 +32,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git extract pip urltools vundle python debian npm)
+plugins=(git extract pip urltools vundle python debian npm mercurial tmux node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,6 +74,7 @@ alias ipyq='ipython qtconsole'
 alias ipyn='ipython notebook'
 alias pylab='ipython --pylab'
 alias pylabq='ipython --pylab=qt'
+
 # alias for ipython3
 alias ipy3='ipython3'
 alias ipyq3='ipython3 qtconsole'
@@ -118,6 +119,9 @@ alias qm5="$QT5PATH/bin/qmake -makefile"
 alias sc="scons -Q"
 alias scc="scons -c"
 
+# alias for vim
+alias vi=vim
+
 #alias time="/usr/bin/time -p"
 
 cman() {
@@ -156,12 +160,12 @@ alias gst="git status -sb"
 function gcd() {
     if [ "$(git rev-parse --show-toplevel)" != "" ]
     then
-        cd $(git rev-parse --show-toplevel)
-    fi
-
-    if [ "$1" != "" ]
-    then
-        cd $1
+        if [ "$1" != "" ]
+        then
+            cd "$(git rev-parse --show-toplevel)/$1"
+        else
+            cd $(git rev-parse --show-toplevel)
+        fi
     fi
 }
 
@@ -189,3 +193,4 @@ export DISPLAY=:0
 alias restartcompiz="(compiz --replaec&)"
 
 export ping='ping -c3'
+alias tmux='tmux -2u'
