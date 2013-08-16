@@ -1,0 +1,25 @@
+# for install system
+.PHONY: base, all
+
+all: base
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	git clone https://github.com/kosl90/dotfiles.git ~/.dotfiles
+	(cd ~/.dotfiles; git checkout --trach origin/job; make)
+	git clone https://github.com/kosl90/dotvim.git ~/.vim
+	(cd ~/.vim; git checkout --trach origin/job; make)
+	chsh -s /usr/bin/zsh
+
+
+base:
+	sudo apt-get install cmake cmake-curses-gui terminator synapse zsh \
+	    libcairo2-doc gdb git devhelp dropbox mercurial deepin-emacs clang\
+	    libclang-dev tmux sublime-text golang-go dconf-tools d-feet
+	sudo apt-get build-dep deepin-desktop-environment
+	sudo apt-get purge deepin-notifications deepin-user-manual
+
+
+# compile vim
+# if --disable-gui, --enable-xim is useless
+# ./configure --with-features=huge --enable-largefile --enable-cscope \
+    # --enable-fontset --enable-multibyte --enable-pythoninterp=yes \
+    #  --enable-xim --disable-gui --prefix=/usr
