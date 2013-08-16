@@ -13,7 +13,7 @@ all: base
 base:
 	sudo apt-get install cmake cmake-curses-gui terminator synapse zsh \
 	    gdb git devhelp mercurial emacs clang libclang-dev tmux golang-go \
-	    dconf-tools d-feet
+	    dconf-tools d-feet ack-grep
 
 
 # compile vim
