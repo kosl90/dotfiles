@@ -37,7 +37,6 @@ plugins=(git git-extras extract pip urltools vundle python debian npm mercurial 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export SRC=$HOME/src
 export TOOLS=$SRC/tools
@@ -46,14 +45,9 @@ export WIKIDATA=$MYWIKI/wikidata
 export DESK=$(grep -i 'desktop' $HOME/.config/user-dirs.dirs | cut -d= -f2)
 export NOTES=$HOME/Dropbox/notes
 
-export PATH=$PATH:$RSENSE_HOME/bin:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
-export PATH=$PATH:/opt/QtSDK/Desktop/Qt/4.8.1/gcc/bin:/opt/QtSDK/QtCreator/bin:/usr/local/sml/bin
 export EDITOR=vim
-export RSENSE_HOME=/opt/rsense
 export GAE_PATH=$TOOLS/google_appengine/
 export GOAGENT_PATH=$GAE_PATH/goagent
-export DEEPIN=$SRC/deepin
-export PATH=$PATH:$GAE_PATH:$HOME/node_modules/.bin/
 
 alias pyHTTPServ='python -m SimpleHTTPServer'
 alias wiki="cd $MYWIKI && gitit &; cd - "
@@ -63,7 +57,7 @@ alias clr='rm -rf *.o a.out *.exe'
 # alias for make
 alias mc='make clean'
 alias mr='make run'
-alias mk='make'
+alias mk='make -j12'
 alias mdc='make distclean'
 alias mkd='make dist'
 
@@ -110,7 +104,8 @@ alias qp="qmake -project"
 alias qm="qmake"
 alias qms="qmake -spec"
 alias qmc="qmake -spec unsupported/linux-clang"
-QT5PATH="/usr/local/Qt-5.0.2/"
+# QT5PATH="/usr/local/Qt-5.0.2/"
+QT5PATH="/opt/Qt5.1.0/5.1.0/gcc/"
 alias qp5="$QT5PATH/bin/qmake -project"
 alias qm5="$QT5PATH/bin/qmake -makefile"
 
@@ -184,3 +179,8 @@ alias ping='ping -c3'
 alias tmux='tmux -2u'
 
 export DISPLAY=:0
+
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$PATH:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
+export PATH=$PATH:/opt/QtSDK/Desktop/Qt/4.8.1/gcc/bin:/opt/QtSDK/QtCreator/bin:/usr/local/sml/bin
+export PATH=$PATH:$GAE_PATH:$HOME/node_modules/.bin/:$QT5PATH/bin/
