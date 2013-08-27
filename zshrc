@@ -150,6 +150,7 @@ alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
 alias gst="git status -sb"
+alias gdw="git diff --wrod-diff"
 
 function gcd() {
     if [ "$(git rev-parse --show-toplevel)" != "" ]
