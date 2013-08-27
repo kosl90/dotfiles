@@ -29,3 +29,5 @@
 	default = current
 [core]
 	safecrlf = true
+[log]
+	decorate = true
