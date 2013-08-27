@@ -21,6 +21,7 @@
 	size = cat-file -s
 	last = cat-file commit HEAD
 	ls = ls-files
+	dw = diff --word-diff
 [color "diff"]
 	whitespace = red reverse
 [credential]
@@ -29,3 +30,7 @@
 	default = current
 [core]
 	safecrlf = true
+[log]
+	decorate = true
+[diff]
+	wordRegex = \\S|\\s$

@@ -13,11 +13,11 @@ all: base
 base:
 	sudo apt-get install cmake cmake-curses-gui terminator synapse zsh \
 	    gdb git devhelp mercurial emacs clang libclang-dev tmux golang-go \
-	    dconf-tools d-feet ack-grep
+	    dconf-tools d-feet ack-grep manpages-posix-dev exubrenat-ctags \
 
 
 # compile vim
 # if --disable-gui, --enable-xim is useless
 # ./configure --with-features=huge --enable-largefile --enable-cscope \
     # --enable-fontset --enable-multibyte --enable-pythoninterp=yes \
-    #  --enable-xim --disable-gui --prefix=/usr
+    # --enable-xim --disable-gui --prefix=/usr
