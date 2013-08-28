@@ -90,8 +90,6 @@ alias goagent="python $GOAGENT_PATH/local/proxy.py"
 alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
 
 # alias for editor
-alias gvim='gvim -f'
-alias gvi='gvim'
 if which emacs24 > /dev/null
 then
     alias em="emacs24 -nw"
@@ -114,6 +112,7 @@ alias sc="scons -Q"
 alias scc="scons -c"
 
 # alias for vim
+alias vim='vim -p'
 alias vi=vim
 
 #alias time="/usr/bin/time -p"
