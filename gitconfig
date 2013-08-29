@@ -30,6 +30,7 @@
 	default = current
 [core]
 	safecrlf = true
+	whitespace = blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof
 [log]
 	decorate = true
 [diff]
