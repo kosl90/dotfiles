@@ -6,14 +6,14 @@ all: base
 	git clone https://github.com/kosl90/dotfiles.git ~/.dotfiles
 	(cd ~/.dotfiles; git checkout --trach origin/job; make)
 	git clone https://github.com/kosl90/dotvim.git ~/.vim
-	(cd ~/.vim; git checkout --trach origin/job; make)
+	(cd ~/.vim; make)
 	chsh -s /usr/bin/zsh
 
 
 base:
 	sudo apt-get install cmake cmake-curses-gui terminator synapse zsh \
 	    gdb git devhelp mercurial emacs clang libclang-dev tmux golang-go \
-	    dconf-tools d-feet ack-grep manpages-posix-dev exubrenat-ctags \
+	    dconf-tools d-feet ack-grep manpages-posix-dev exubernat-ctags \
 	    subversion
 
 
