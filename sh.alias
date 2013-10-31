@@ -98,6 +98,7 @@ alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
+alias gdl='git difftool'
 alias gst="git status -sb"
 alias gdw="git diff --word-diff"
 

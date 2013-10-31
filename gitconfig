@@ -22,6 +22,8 @@
 	last = cat-file commit HEAD
 	ls = ls-files
 	dw = diff --word-diff
+	dl = difftool
+	dlc = difftool --cached
 [color "diff"]
 	whitespace = red reverse
 [credential]
@@ -34,3 +36,6 @@
 	decorate = true
 [diff]
 	wordRegex = \\S|\\s$
+	tool = vimdiff
+[difftool "vimdiff"]
+	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
