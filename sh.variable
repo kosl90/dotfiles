@@ -7,10 +7,10 @@ export NOTES=$HOME/Dropbox/notes
 export QT5PATH="/opt/Qt5.1.0/5.1.0/gcc/"
 
 export EDITOR=vim
-export GAE_PATH=$TOOLS/google_appengine/
+export GAE_PATH=$HOME/GAE
 export GOAGENT_PATH=$GAE_PATH/goagent
 
-# export http_proxy="http://localhost:8087"
+export http_proxy="http://localhost:8087"
 
 export DISPLAY=:0
 
