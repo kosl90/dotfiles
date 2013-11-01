@@ -45,9 +45,9 @@ source $ZSH/oh-my-zsh.sh
 
 CONF_PATH=$HOME/dotfiles
 
-source $CONF_PATH/sh.variable
-source $CONF_PATH/sh.func
-source $CONF_PATH/sh.alias
+source $CONF_PATH/variable.sh
+source $CONF_PATH/func.sh
+source $CONF_PATH/alias.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
