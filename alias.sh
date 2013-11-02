@@ -20,7 +20,7 @@ alias python2=python2.7
 alias clr='rm -rf *.o a.out *.exe'
 
 alias dp='xdg-open'
-alias owd="xdg-open $(pwd)"
+alias owd="xdg-open ."
 
 alias psa="ps -ef"
 alias kill="kill -9"
