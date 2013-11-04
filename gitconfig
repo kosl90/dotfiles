@@ -39,3 +39,5 @@
 	tool = vimdiff
 [difftool "vimdiff"]
 	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+[clean]
+	requireForce = false
