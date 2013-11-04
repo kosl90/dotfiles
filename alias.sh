@@ -1,5 +1,6 @@
 unalias ag
 unalias sl
+unalias di
 
 # general
 alias 关机='sudo poweroff'
