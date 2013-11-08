@@ -10,7 +10,7 @@ export EDITOR=vim
 export GAE_PATH=$HOME/GAE
 export GOAGENT_PATH=$GAE_PATH/goagent
 
-export http_proxy="http://localhost:8087"
+# export http_proxy="http://localhost:8087"
 
 export DISPLAY=:0
 
@@ -21,4 +21,4 @@ PATH=$PATH:$GAE_PATH:$HOME/node_modules/.bin/:$QT5PATH/bin/
 PATH=$PATH:$HOME/.local/bin
 
 # to fix tmux connect dbus failed
-unset DBUS_SESSION_BUS_ADDRESS
+# unset DBUS_SESSION_BUS_ADDRESS
