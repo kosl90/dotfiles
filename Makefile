@@ -4,3 +4,5 @@ all:
 	ln -fs `pwd`/toprc ~/.toprc
 	ln -fs `pwd`/zshrc ~/.zshrc
 	ln -fs `pwd`/tmux.conf ~/.tmux.conf
+	ln -fs `pwd`/gitconfig ~/.gitconfig
+	ln -fs `pwd`/astylerc ~/.astylerc

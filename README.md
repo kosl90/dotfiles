@@ -8,6 +8,7 @@ My some configure files.
 * zsh
 * ghci
 * astyle
+* tmux
 
 
 # License

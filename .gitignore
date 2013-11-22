@@ -2,4 +2,4 @@
 *.orig
 \#.*\#
 *.pyc
-*.sw[po]
+*.sw[op]
