@@ -4,7 +4,7 @@ export MYWIKI=$HOME/mywiki
 export WIKIDATA=$MYWIKI/wikidata
 export NOTES=$HOME/Dropbox/notes
 
-export QT5PATH="/opt/Qt5.1.0/5.1.0/gcc/"
+export QT5PATH="/opt/Qt5.1.1/5.1.1/gcc/"
 
 export EDITOR=vim
 export GAE_PATH=$HOME/GAE
