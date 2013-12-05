@@ -44,7 +44,7 @@ alias ll="ls -Flh --color=auto"
 # alias for make
 alias mc='make clean'
 alias mr='make run'
-alias mk='make -j12'
+alias mk="make -j$(($(grep processor /proc/cpuinfo | wc -l) + 1))"
 alias mdc='make distclean'
 alias mkd='make dist'
 
