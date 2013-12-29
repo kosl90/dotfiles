@@ -1,8 +1,11 @@
+install = ln -fs `pwd`/$(1) ~/.$(1)
+
 all:
-	ln -fs `pwd`/gdb ~/.gdb
-	ln -fs `pwd`/gdbinit ~/.gdbinit
-	ln -fs `pwd`/toprc ~/.toprc
-	ln -fs `pwd`/zshrc ~/.zshrc
-	ln -fs `pwd`/tmux.conf ~/.tmux.conf
-	ln -fs `pwd`/gitconfig ~/.gitconfig
-	ln -fs `pwd`/astylerc ~/.astylerc
+	$(call install, gdb)
+	$(call install, gdbinit)
+	$(call install, toprc)
+	$(call install, zshrc)
+	$(call install, tmux.conf)
+	$(call install, gitconfig)
+	$(call install, astylerc)
+	$(call install, rvmrc)
