@@ -30,3 +30,16 @@ function gcd() {
         echo "no such a directory $(git rev-parse --show-toplevel)/$1"
     fi
 }
+
+unalias g
+function g() {
+    case $1 in
+        "cd")
+            shift
+            gcd $@
+            ;;
+        *)
+            git $@
+            ;;
+    esac
+}
