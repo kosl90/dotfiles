@@ -9,6 +9,12 @@ My some configure files.
 * ghci
 * astyle
 * tmux
+* rvmrc
+* git
+
+
+# Quick start
+`make` to installing or edit the files variable before `make` it.
 
 
 # License
