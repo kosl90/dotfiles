@@ -1,11 +1,5 @@
-install = ln -fs `pwd`/$(1) ~/.$(1)
+files = gdb gdbinit toprc zshrc tmux.conf gitconfig astylerc rvmrc
+install = ln -fs `pwd`/$(1) ~/.$(1);
 
 all:
-	$(call install, gdb)
-	$(call install, gdbinit)
-	$(call install, toprc)
-	$(call install, zshrc)
-	$(call install, tmux.conf)
-	$(call install, gitconfig)
-	$(call install, astylerc)
-	$(call install, rvmrc)
+	$(foreach file, $(files), $(call install, $(file)))
