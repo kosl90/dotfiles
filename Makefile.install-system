@@ -26,9 +26,9 @@ base:
 #    --enable-largefile --enable-multibyte  --with-features=huge --with-x\
 #	--enable-pythoninterp=yes \
 #	--with-python-config-dir=/usr/lib/python2.7/config-i386-linux-gnu/ \
-#	--enable-rubyinterp=dynamic \
-#	--enable-perlinterp=dynamic \
-#	--with-luajit --enable-luainterp=dynamic
+#	--enable-rubyinterp=yes \
+#	--with-luajit --enable-luainterp=yes
+#	may use dynamic
 
 # either python2 or python3
 # if python2 and python3 both are installed cannot use dynamic
