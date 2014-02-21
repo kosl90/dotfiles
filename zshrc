@@ -51,9 +51,5 @@ source $CONF_PATH/alias.sh
 
 # export http_proxy="http://localhost:8087"
 
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PATH
-source /home/lee/Workspace/VirtualEnv/develop/bin/activate
