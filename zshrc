@@ -34,7 +34,7 @@ ZSH_THEME="kphoen"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras extract urltools vundle python debian npm mercurial node rvm svn tmux go)
+plugins=(git git-extras extract urltools vundle python debian npm mercurial node rvm svn tmux go rake)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,3 +56,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH
+source /home/lee/Workspace/VirtualEnv/develop/bin/activate
