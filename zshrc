@@ -51,5 +51,6 @@ source $CONF_PATH/alias.sh
 
 # export http_proxy="http://localhost:8087"
 
+source /home/lee/Workspace/VirtualEnv/develop/bin/activate
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
