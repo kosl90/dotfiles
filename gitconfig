@@ -38,6 +38,6 @@
 	wordRegex = \\S|\\s$
 	tool = vimdiff
 [difftool "vimdiff"]
-	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+	cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 [clean]
 	requireForce = false
