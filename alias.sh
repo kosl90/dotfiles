@@ -24,8 +24,8 @@ alias dp='xdg-open'
 alias owd="xdg-open ."
 
 alias psa="ps -ef"
-alias kill="kill -9"
-alias kall='killall -9'
+# alias kill="kill -9"
+# alias kall='killall -9'
 
 alias goagent="python $GOAGENT_PATH/local/proxy.py"
 alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
