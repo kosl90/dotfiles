@@ -41,3 +41,5 @@
 	cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 [clean]
 	requireForce = false
+[grep]
+	lineNumber = true
