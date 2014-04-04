@@ -54,3 +54,7 @@ source $CONF_PATH/alias.sh
 source $HOME/Workspace/VirtualEnv/develop/bin/activate
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [[ -s '/etc/zsh_command_not_found' ]]; then
+	source '/etc/zsh_command_not_found'
+fi
