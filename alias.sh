@@ -50,19 +50,19 @@ alias mkd='make dist'
 
 
 #alias for ipython
-alias ipy='ipython'
-alias ipyq='ipython qtconsole'
-alias ipyn='ipython notebook'
-alias pylab='ipython --pylab'
-alias pylabq='ipython --pylab=qt'
+# alias ipy='ipython'
+# alias ipyq='ipython qtconsole'
+# alias ipyn='ipython notebook'
+# alias pylab='ipython --pylab'
+# alias pylabq='ipython --pylab=qt'
 
 
 # alias for ipython3
-alias ipy3='ipython3'
-alias ipyq3='ipython3 qtconsole'
-alias ipyn3='ipython3 notebook'
-alias pylab3='ipython3 --pylab'
-alias pylabq3='ipython3 --pylab=qt'
+# alias ipy3='ipython3'
+# alias ipyq3='ipython3 qtconsole'
+# alias ipyn3='ipython3 notebook'
+# alias pylab3='ipython3 --pylab'
+# alias pylabq3='ipython3 --pylab=qt'
 
 
 # alias for vim
