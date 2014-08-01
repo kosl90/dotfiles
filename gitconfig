@@ -5,7 +5,8 @@
 	ui = true
 	editor = vim
 [alias]
-	st = status -sb
+	st = status -sb --untracked-files=no
+	stu = status -sb
 	unstage = reset HEAD --
 	ci = commit
 	co = checkout
@@ -39,6 +40,8 @@
 	wordRegex = \\S|\\s$
 	tool = vimdiff
 [difftool "vimdiff"]
-	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+	cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 [clean]
 	requireForce = false
+[grep]
+	lineNumber = true

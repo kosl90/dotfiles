@@ -24,8 +24,8 @@ alias dp='xdg-open'
 alias owd="xdg-open ."
 
 alias psa="ps -ef"
-alias kill="kill -9"
-alias kall='killall -9'
+# alias kill="kill -9"
+# alias kall='killall -9'
 
 alias goagent="python $GOAGENT_PATH/local/proxy.py"
 alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
@@ -50,19 +50,19 @@ alias mkd='make dist'
 
 
 #alias for ipython
-alias ipy='ipython'
-alias ipyq='ipython qtconsole'
-alias ipyn='ipython notebook'
-alias pylab='ipython --pylab'
-alias pylabq='ipython --pylab=qt'
+# alias ipy='ipython'
+# alias ipyq='ipython qtconsole'
+# alias ipyn='ipython notebook'
+# alias pylab='ipython --pylab'
+# alias pylabq='ipython --pylab=qt'
 
 
 # alias for ipython3
-alias ipy3='ipython3'
-alias ipyq3='ipython3 qtconsole'
-alias ipyn3='ipython3 notebook'
-alias pylab3='ipython3 --pylab'
-alias pylabq3='ipython3 --pylab=qt'
+# alias ipy3='ipython3'
+# alias ipyq3='ipython3 qtconsole'
+# alias ipyn3='ipython3 notebook'
+# alias pylab3='ipython3 --pylab'
+# alias pylabq3='ipython3 --pylab=qt'
 
 
 # alias for vim
@@ -113,3 +113,5 @@ then
 else if which ack > /dev/null
     alias ackp='ack --pager=less'
 fi
+
+alias sin="dbus-send --dest=com.deepin.dde.dock --print-reply --type=method_call /com/deepin/dde/dock com.deepin.dde.dock.ShowInspector"

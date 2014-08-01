@@ -34,7 +34,7 @@ ZSH_THEME="kphoen"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras extract urltools vundle python debian npm mercurial node rvm svn tmux go)
+plugins=(git git-extras extract urltools vundle python debian npm mercurial node rvm svn tmux go rake ruby gem cabal pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,8 +51,13 @@ source $CONF_PATH/alias.sh
 
 # export http_proxy="http://localhost:8087"
 
+export WEBKIT_INSPECTOR_PATH=$HOME/webinspector/
+source $HOME/Workspace/VirtualEnv/develop/bin/activate
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PATH
+if [[ -s '/etc/zsh_command_not_found' ]]; then
+	source '/etc/zsh_command_not_found'
+fi
+WINE_QQ_FILE_RECV_DIR=$HOME/.deepinwine/qqintl/drive_c/Program\ Files/Tencent/QQIntl/Users/363683657/FileRecv/
+# LANGUAGE="zh_CN"

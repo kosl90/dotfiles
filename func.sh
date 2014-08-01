@@ -43,3 +43,37 @@ function g() {
             ;;
     esac
 }
+
+function version() {
+	dpkg -p $1 | grep -i version
+}
+
+function dlog {
+if [ -s "/var/log/deepin.log" ]; then
+	logfile='/var/log/deepin.log'
+else
+	logfile='/var/log/deepin.log.1'
+fi
+colortail -n 50 --follow --config=<(cat <<EOF
+COLOR green
+{
+	^(.*\[NEW\].*)$
+}
+
+COLOR brightblue
+{
+	^(.*\[DEBUG\])
+}
+
+COLOR brightyellow
+{
+	^(.*\[WARNING\].*)$
+}
+
+COLOR brightred
+{
+	^(.*\[ERROR\].*)$
+}
+EOF
+) "${logfile}"
+}
