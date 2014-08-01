@@ -5,7 +5,8 @@
 	ui = true
 	editor = vim
 [alias]
-	st = status -sb
+	st = status -sb --untracked-files=no
+	stu = status -sb
 	unstage = reset HEAD --
 	ci = commit
 	co = checkout
