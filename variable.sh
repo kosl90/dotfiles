@@ -20,7 +20,8 @@ PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:
 PATH=$PATH:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
 PATH=$PATH:/opt/QtSDK/Desktop/Qt/4.8.1/gcc/bin:/opt/QtSDK/QtCreator/bin:/usr/local/sml/bin
 PATH=$PATH:$GAE_PATH:$HOME/node_modules/.bin/:$QT5PATH/bin/
-PATH=$PATH:$HOME/.local/bin:$MY_GOPATH/bin:/usr/lib/go/bin
+PATH=$PATH:$HOME/.local/bin:$MY_GOPATH/bin:/usr/lib/go/bin:$GOPATH/bin
+PATH=$QT5PATH/bin:$PATH
 
 # to fix tmux connect dbus failed
 # unset DBUS_SESSION_BUS_ADDRESS

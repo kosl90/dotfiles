@@ -33,6 +33,7 @@
 	default = current
 [core]
 	safecrlf = true
+	editor = vim
 [log]
 	decorate = true
 [diff]

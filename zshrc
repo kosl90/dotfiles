@@ -51,7 +51,7 @@ source $CONF_PATH/alias.sh
 
 # export http_proxy="http://localhost:8087"
 
-export WEBKIT_INSPECTOR_PATH=$HOME/webinspector/
+alias devpy="source $HOME/Workspace/VirtualEnv/develop/bin/activate"
 source $HOME/Workspace/VirtualEnv/develop/bin/activate
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

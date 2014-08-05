@@ -7,7 +7,7 @@ alias 关机='sudo poweroff'
 alias hub=$HOME/src/tools/hub
 
 alias synapse='(synapse -s &)'
-alias ping='ping -c3'
+alias ping='ping -c5'
 alias t='tmux -2u'
 alias tmux='tmux -2u'
 
