@@ -96,6 +96,7 @@ alias scc="scons -c"
 
 
 # alias for git
+alias git="LANG=C git"
 alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"

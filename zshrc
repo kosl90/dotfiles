@@ -61,3 +61,10 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
 fi
 WINE_QQ_FILE_RECV_DIR=$HOME/.deepinwine/qqintl/drive_c/Program\ Files/Tencent/QQIntl/Users/363683657/FileRecv/
 # LANGUAGE="zh_CN"
+
+ulimit -S -c unlimited
+
+if [ ! -d "/tmp/core_files" ]
+then
+	mkdir /tmp/core_files
+fi
