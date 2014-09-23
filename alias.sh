@@ -1,5 +1,4 @@
 unalias ag
-unalias sl
 unalias di
 
 # general
