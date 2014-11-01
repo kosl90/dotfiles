@@ -10,7 +10,9 @@ alias ping='ping -c5'
 alias t='tmux -2u'
 alias tmux='tmux -2u'
 
-alias god="cd $(grep 'XDG_DESKTOP_' $HOME/.config/user-dirs.dirs | cut -d= -f2)"
+if [ -f $HOME/.config/user-dirs.dirs ]; then
+	alias god="cd $(grep 'XDG_DESKTOP_' $HOME/.config/user-dirs.dirs | cut -d= -f2)"
+fi
 alias gor='cd /run/shm'
 alias got='cd /tmp'
 
@@ -26,8 +28,8 @@ alias psa="ps -ef"
 # alias kill="kill -9"
 # alias kall='killall -9'
 
-alias goagent="python $GOAGENT_PATH/local/proxy.py"
-alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
+# alias goagent="python $GOAGENT_PATH/local/proxy.py"
+# alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
 
 alias code_name='lsb_release -cs'
 alias release_version='lsb_release -rs'
