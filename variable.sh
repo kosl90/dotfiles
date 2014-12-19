@@ -6,13 +6,14 @@ export NOTES=$HOME/Dropbox/notes
 
 export QT5PATH="/opt/Qt5.1.1/5.1.1/gcc/"
 
+export WORKSPACE=$HOME/workspace
 export EDITOR=vim
 export GAE_PATH=$HOME/GAE
 export GOAGENT_PATH=$GAE_PATH/goagent
 
 export DISPLAY=:0
 
-export GOPATH=$HOME/workspace/golang/
+export GOPATH=$WORKSPACE/golang/
 
 PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=$PATH:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
