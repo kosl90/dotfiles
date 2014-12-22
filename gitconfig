@@ -5,8 +5,8 @@
 	ui = true
 	editor = vim
 [alias]
-	st = status -sb --untracked-files=no
-	stu = status -sb
+	st = status -sb
+	stu = status -sb --untracked-files=no
 	unstage = reset HEAD --
 	ci = commit
 	co = checkout
@@ -34,6 +34,7 @@
 [core]
 	safecrlf = true
 	whitespace = blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof
+	editor = vim
 [log]
 	decorate = true
 [diff]
