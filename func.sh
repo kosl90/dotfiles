@@ -44,6 +44,14 @@ function g() {
     esac
 }
 
+function cp-schema() {
+    sudo cp $1 /usr/share/glib-2.0/schemas/
+}
+
+function cpl-schema() {
+    sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+}
+
 function version() {
 	dpkg -p $1 | grep -i version
 }
