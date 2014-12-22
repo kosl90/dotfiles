@@ -14,6 +14,10 @@ export GOAGENT_PATH=$GAE_PATH/goagent
 export DISPLAY=:0
 
 export GOPATH=$WORKSPACE/golang/
+MY_GOPATH=$HOME/Workspace/gohome/
+DEEPIN_GOPATH=$HOME/Workspace/deepin/gohome
+SYS_GOPATH=/usr/share/gocode
+export GOPATH=$MY_GOPATH:$DEEPIN_GOPATH:$SYS_GOPATH
 
 PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=$PATH:$TOOLS/apache-maven/bin:$HOME/.cabal/bin:/usr/local/go/bin:$HOME/src/scripts
