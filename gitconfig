@@ -48,3 +48,5 @@
 	lineNumber = true
 [gitreview]
 	username = liliqiang
+[merge]
+	ff = false
