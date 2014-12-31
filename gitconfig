@@ -45,3 +45,5 @@
 	requireForce = false
 [grep]
 	lineNumber = true
+[merge]
+	ff = false
