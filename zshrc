@@ -59,3 +59,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 if [[ -s '/etc/zsh_command_not_found' ]]; then
 	source '/etc/zsh_command_not_found'
 fi
+
+AUTOJUMP_PATH=/etc/profile.d/autojump.zsh
+[[ -s $AUTOJUMP_PATH ]] && source $AUTOJUMP_PATH
+
