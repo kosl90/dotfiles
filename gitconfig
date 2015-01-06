@@ -49,4 +49,4 @@
 [gitreview]
 	username = liliqiang
 [merge]
-	ff = false
+#ff = false
