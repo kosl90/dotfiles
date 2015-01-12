@@ -60,10 +60,10 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
 	source '/etc/zsh_command_not_found'
 fi
 
-if grep -i ubuntu /etc/os-release; then
-    AUTOJUMP_PATH=/usr/share/autojump/autojump.zsh
+if grep -i ubuntu /etc/os-release &> /dev/null; then
+    AUTOJUMP_PATH=/usr/share/autojump/autojump.sh
 else
-    AUTOJUMP_PATH=/etc/profile.d/autojump.zsh
+    AUTOJUMP_PATH=/etc/profile.d/autojump.sh
 fi
 [[ -s $AUTOJUMP_PATH ]] && source $AUTOJUMP_PATH
 
