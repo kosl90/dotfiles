@@ -1,0 +1,19 @@
+# CONF_PATH should be defined out of shellrc, like zshrc
+# and then source $CONF_PATH/shellrc
+source $CONF_PATH/variable.sh
+source $CONF_PATH/func.sh
+source $CONF_PATH/alias.sh
+
+# export http_proxy="http://localhost:8087"
+
+#source $WORKSPACE/VirtualEnv/develop/bin/activate
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if grep -i ubuntu /etc/os-release &> /dev/null; then
+    AUTOJUMP_PATH=/usr/share/autojump/autojump.sh
+else
+    AUTOJUMP_PATH=/etc/profile.d/autojump.sh
+fi
+[[ -s $AUTOJUMP_PATH ]] && source $AUTOJUMP_PATH
+
