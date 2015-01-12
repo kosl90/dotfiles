@@ -17,7 +17,6 @@ alias gor='cd /run/shm'
 alias got='cd /tmp'
 
 alias pyHTTPServ='python -m SimpleHTTPServer'
-alias wiki="cd $MYWIKI && gitit &; cd - "
 alias python2=python2.7
 alias clr='rm -rf *.o a.out *.exe'
 
