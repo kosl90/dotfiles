@@ -16,8 +16,7 @@ fi
 alias gor='cd /run/shm'
 alias got='cd /tmp'
 
-alias pyHTTPServ='python -m SimpleHTTPServer'
-alias wiki="cd $MYWIKI && gitit &; cd - "
+alias pyHTTPServ='python2 -m SimpleHTTPServer'
 alias python2=python2.7
 alias clr='rm -rf *.o a.out *.exe'
 
@@ -64,6 +63,11 @@ alias mkd='make dist'
 # alias ipyn3='ipython3 notebook'
 # alias pylab3='ipython3 --pylab'
 # alias pylabq3='ipython3 --pylab=qt'
+
+if [ -d $WORKSPACE/VirtualEnv ];
+then
+    alias devpy="source $WORKSPACE/VirtualEnv/develop/bin/activate"
+fi
 
 
 # alias for vim
