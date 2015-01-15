@@ -14,7 +14,7 @@ base:
 	sudo apt-get install cmake cmake-curses-gui terminator synapse zsh \
 	    gdb git devhelp mercurial emacs clang libclang-dev tmux golang-go \
 	    dconf-tools d-feet ack-grep manpages-posix-dev exuberant-ctags \
-	    subversion
+	    subversion autojump
 
 
 # compile vim
