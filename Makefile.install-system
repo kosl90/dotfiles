@@ -15,7 +15,7 @@ base:
 	    libcairo2-doc gdb git devhelp dropbox mercurial deepin-emacs clang\
 	    libclang-dev tmux sublime-text golang-go dconf-tools d-feet ack-grep\
 	    manpages-posix-dev exuberant-ctags liblightdm-gobject-1-dev \
-	    libgdk-pixbuf2.0-doc libx11-doc subversion
+	    libgdk-pixbuf2.0-doc libx11-doc subversion autojump
 	sudo apt-get build-dep deepin-desktop-environment
 	sudo apt-get purge deepin-notifications deepin-user-manual
 
