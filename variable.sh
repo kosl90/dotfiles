@@ -16,8 +16,8 @@ export GOAGENT_PATH=$GAE_PATH/goagent
 export DISPLAY=:0
 
 export GOPATH=$WORKSPACE/golang/
-MY_GOPATH=$HOME/Workspace/gohome/
-DEEPIN_GOPATH=$HOME/Workspace/deepin/gohome
+MY_GOPATH=$WORKSPACE/gohome/
+DEEPIN_GOPATH=$WORKSPACE/deepin/gohome
 SYS_GOPATH=/usr/share/gocode
 export GOPATH=$MY_GOPATH:$DEEPIN_GOPATH:$SYS_GOPATH
 
