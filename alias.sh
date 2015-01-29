@@ -12,14 +12,16 @@ alias synapse='(synapse -s &)'
 alias ping='ping -c5'
 alias t='tmux -2u'
 alias tmux='tmux -2u'
+alias s=startx
 
 if [ -f $HOME/.config/user-dirs.dirs ]; then
-	alias god="cd $(grep 'XDG_DESKTOP_' $HOME/.config/user-dirs.dirs | cut -d= -f2)"
+    alias god="cd $(grep 'XDG_DESKTOP_' $HOME/.config/user-dirs.dirs | cut -d= -f2)"
 fi
 alias gor='cd /run/shm'
 alias got='cd /tmp'
 
-alias pyHTTPServ='python2 -m SimpleHTTPServer'
+alias py2HTTPServ='python2 -m SimpleHTTPServer'
+alias py3HTTPServ='python3 -m http.server'
 alias python2=python2.7
 alias clr='rm -rf *.o a.out *.exe'
 
