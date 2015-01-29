@@ -43,25 +43,12 @@ source $ZSH/oh-my-zsh.sh
 # source $ZSH/custom/incr*.zsh
 # source $ZSH/incr*.zsh
 
-CONF_PATH=$HOME/.dotfiles
-
-source $CONF_PATH/variable.sh
-source $CONF_PATH/func.sh
-source $CONF_PATH/alias.sh
-
-# export http_proxy="http://localhost:8087"
-
-alias devpy="source $HOME/Workspace/VirtualEnv/develop/bin/activate"
-#source $HOME/Workspace/VirtualEnv/develop/bin/activate
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 if [[ -s '/etc/zsh_command_not_found' ]]; then
 	source '/etc/zsh_command_not_found'
 fi
 
-AUTOJUMP_PATH=/etc/profile.d/autojump.zsh
-[[ -s $AUTOJUMP_PATH ]] && source $AUTOJUMP_PATH
+export CONF_PATH=$HOME/.dotfiles
+source $CONF_PATH/shellrc
 
 ulimit -S -c unlimited
 
