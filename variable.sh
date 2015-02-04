@@ -25,7 +25,7 @@ PATH=/usr/local/sml/bin:$PATH
 PATH=$GAE_PATH:$HOME/node_modules/.bin/:$PATH
 PATH=$HOME/.local/bin:$PATH
 PATH=$QT5PATH/bin:$PATH
-PATH=$MY_GOPATH/bin:$GOPATH/bin:$DEEPIN_GOPATH/bin:/usr/lib/go/bin:$PATH
+PATH=$GOPATH/bin:/usr/lib/go/bin:$PATH
 
 # to fix tmux connect dbus failed
 # unset DBUS_SESSION_BUS_ADDRESS
