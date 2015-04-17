@@ -10,10 +10,16 @@ source $CONF_PATH/alias.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# TODO: make a test on archlinux.
 if grep -i ubuntu /etc/os-release &> /dev/null; then
-    AUTOJUMP_PATH=/usr/share/autojump/autojump.sh
+    if [ -z $BASH ]
+    then
+      AUTOJUMP_PATH=/usr/share/autojump/autojump.zsh
+    else
+      AUTOJUMP_PATH=/usr/share/autojump/autojump.bash
+    fi
 else
     AUTOJUMP_PATH=/etc/profile.d/autojump.sh
 fi
 [[ -s $AUTOJUMP_PATH ]] && source $AUTOJUMP_PATH
-
+unset AUTOJUMP_PATH
