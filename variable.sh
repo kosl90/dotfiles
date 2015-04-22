@@ -17,11 +17,10 @@ export DISPLAY=:0
 
 export GOPATH=$WORKSPACE/golang/
 MY_GOPATH=$WORKSPACE/gohome/
-DEEPIN_GOPATH=$WORKSPACE/deepin/gohome
 SYS_GOPATH=/usr/share/gocode
-export GOPATH=$MY_GOPATH:$DEEPIN_GOPATH:$SYS_GOPATH
+export GOPATH=$MY_GOPATH:$SYS_GOPATH
 
-export SBT_OPTS="${SBT_OPTS} -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=7070"
+#export SBT_OPTS="${SBT_OPTS} -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=7070"
 #export SBT_OPTS="${SBT_OPTS} -DhttpProxy.Host=127.0.0.1 -DhttoProxy.Port=7070"
 
 export DDE=$WORKSPACE/deepin/dde-workspace
@@ -33,7 +32,13 @@ PATH=/usr/local/sml/bin:$PATH
 PATH=$GAE_PATH:$HOME/node_modules/.bin/:$PATH
 PATH=$HOME/.local/bin:$PATH
 PATH=$QT5PATH/bin:$PATH
-PATH=$MY_GOPATH/bin:$GOPATH/bin:$DEEPIN_GOPATH/bin:$SYS_GOPATH/bin:/usr/lib/go/bin:$PATH
+PATH=$MY_GOPATH/bin:$GOPATH/bin:$SYS_GOPATH/bin:/usr/lib/go/bin:$PATH
+
+export XDG_DATA_HOME=${XDG_DATA_HOME=$HOME/.local/share}
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME=$HOME/.config}
+export XDG_DATA_DIRS=${XDG_DATA_DIRS=/usr/local/share:/usr/share}
+export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS=/etc/xdg}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME=$HOME/.cache}
 
 # to fix tmux connect dbus failed
 # unset DBUS_SESSION_BUS_ADDRESS

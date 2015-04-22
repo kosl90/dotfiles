@@ -50,3 +50,5 @@
 	username = liliqiang
 [merge]
 #ff = false
+[apply]
+	whitespace = warn

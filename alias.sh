@@ -2,7 +2,7 @@ unalias ag
 unalias di
 
 unalias grep
-alias grep='grep -Pn --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
+alias grep='grep -P --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
 
 # general
 alias 关机='sudo poweroff'
