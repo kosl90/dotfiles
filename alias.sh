@@ -1,5 +1,16 @@
-unalias ag
-unalias di
+# this is from debian plugin for upgrade,
+# unalias ag to make silversearcher-ag work.
+if alias ag >& /dev/null
+then
+    unalias ag
+fi
+
+# this is from debian plugin for dpkg -i,
+# unalias di to make di(a advanced disk information utility) work.
+if alias di >& /dev/null
+then
+    unalias di
+fi
 
 unalias grep
 alias grep='grep -P --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
@@ -29,8 +40,7 @@ alias dp='xdg-open'
 alias owd="xdg-open ."
 
 alias psa="ps -ef"
-# alias kill="kill -9"
-# alias kall='killall -9'
+alias kall='killall'
 
 # alias goagent="python $GOAGENT_PATH/local/proxy.py"
 # alias goagent3="python3 $GOAGENT_PATH/local/proxy.py"
@@ -54,7 +64,7 @@ alias mdc='make distclean'
 alias mkd='make dist'
 
 
-#alias for ipython
+# alias for ipython
 # alias ipy='ipython'
 # alias ipyq='ipython qtconsole'
 # alias ipyn='ipython notebook'
@@ -121,7 +131,8 @@ if which ack-grep > /dev/null
 then
     alias ack="ack-grep"
     alias ackp='ack-grep --pager=less'
-else if which ack > /dev/null
+elif which ack > /dev/null
+then
     alias ackp='ack --pager=less'
 fi
 

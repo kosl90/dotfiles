@@ -31,7 +31,12 @@ function gcd() {
     fi
 }
 
-unalias g
+# this is from git plugin.
+# unalias g alias to make g function work.
+if alias g >& /dev/null
+then
+    unalias g
+fi
 function g() {
     case $1 in
         "cd")
