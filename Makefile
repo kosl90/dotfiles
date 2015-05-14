@@ -14,8 +14,7 @@ zsh-config:
 	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 vim-config:
-	git clone https://github.com/kosl90/dotvim.git ~/.vim
-	(cd ~/.vim; make)
+	if ! [ -d ~/.vim ]; then git clone https://github.com/kosl90/dotvim.git ~/.vim && (cd ~/.vim; make); fi
 
 chsh:
 	chsh -s /usr/bin/zsh
