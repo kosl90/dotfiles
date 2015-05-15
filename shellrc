@@ -11,7 +11,7 @@ source $CONF_PATH/alias.sh
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # TODO: make a test on archlinux.
-if grep -i "ubuntu\|debian\|deepin" /etc/os-release &> /dev/null; then
+if grep -i 'ubuntu|debian|deepin' /etc/os-release &> /dev/null; then
     if [ -z $BASH ]
     then
       AUTOJUMP_PATH=/usr/share/autojump/autojump.zsh
