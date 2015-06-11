@@ -52,7 +52,3 @@ source $CONF_PATH/shellrc
 
 ulimit -S -c unlimited
 
-if [ ! -d "/tmp/core_files" ]
-then
-	mkdir /tmp/core_files
-fi
