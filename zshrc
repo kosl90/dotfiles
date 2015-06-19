@@ -34,7 +34,7 @@ ZSH_THEME="kphoen"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras extract urltools vundle python debian npm mercurial node rvm svn tmux go rake ruby gem cabal pip)
+plugins=(git git-extras extract urltools vundle python debian npm mercurial node rvm svn tmux go rake ruby gem cabal pip docker sbt scala nmap autojump)
 
 source $ZSH/oh-my-zsh.sh
 
