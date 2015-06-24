@@ -137,3 +137,5 @@ then
 fi
 
 alias sin="dbus-send --dest=com.deepin.dde.dock --print-reply --type=method_call /com/deepin/dde/dock com.deepin.dde.dock.ShowInspector"
+alias sss="sslocal -c $HOME/.config.json"
+
