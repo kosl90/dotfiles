@@ -49,3 +49,5 @@ fi
 
 export CONF_PATH=$HOME/.dotfiles
 source $CONF_PATH/shellrc
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
