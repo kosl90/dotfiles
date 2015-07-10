@@ -47,4 +47,4 @@
 [grep]
 	lineNumber = true
 [merge]
-	ff = false
+	ff = true
