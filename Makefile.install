@@ -6,7 +6,7 @@ all: soft-gui no-gui
 no-gui: config-files soft-no-gui zsh-config vim-config chsh
 
 
-files = toprc zshrc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0
+files = toprc zshrc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc
 install = ln -fs `pwd`/$(1) ~/.$(1);
 
 INS?=

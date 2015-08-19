@@ -1,0 +1,2 @@
+#npm install -g cnpm --registry = https://registry.npm.taobao.org install -g cnpm --registry=https://registry.npm.taobao.org
+registry = https://registry.npm.taobao.org/org
