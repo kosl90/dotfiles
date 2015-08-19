@@ -137,5 +137,10 @@ then
 fi
 
 alias sin="dbus-send --dest=com.deepin.dde.dock --print-reply --type=method_call /com/deepin/dde/dock com.deepin.dde.dock.ShowInspector"
+
 alias sss="sslocal -c $HOME/.config.json"
 
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+    --cache=$HOME/.npm/.cache/cnpm \
+    --disturl=https://npm.taobao.org/dist \
+    --userconfig=$HOME/.cnpmrc"

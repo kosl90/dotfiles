@@ -52,3 +52,4 @@ source $CONF_PATH/shellrc
 
 ulimit -S -c unlimited
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --randomize --bg-scale ~/.xmonad/imgs/*
+feh --no-fehbg --randomize --bg-fill ~/.xmonad/imgs/*

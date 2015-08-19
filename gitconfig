@@ -50,6 +50,6 @@
 [gitreview]
 	username = liliqiang
 [merge]
-#ff = false
+	ff = true
 [apply]
 	whitespace = warn

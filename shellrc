@@ -8,8 +8,6 @@ source $CONF_PATH/alias.sh
 
 #source $WORKSPACE/VirtualEnv/develop/bin/activate
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # TODO: make a test on archlinux.
 if grep -i 'ubuntu|debian|deepin' /etc/os-release &> /dev/null; then
     if [ ! -z $BASH ]; then
