@@ -23,7 +23,7 @@ alias synapse='(synapse -s &)'
 alias ping='ping -c5'
 alias t='tmux -2u'
 alias tmux='tmux -2u'
-alias s=startx
+alias sx=startx
 
 if [ -f $HOME/.config/user-dirs.dirs ]; then
     alias god="cd $(grep 'XDG_DESKTOP_' $HOME/.config/user-dirs.dirs | cut -d= -f2)"

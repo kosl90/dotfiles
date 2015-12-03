@@ -12,12 +12,17 @@ function cman() {
 
 
 function vman() {
-    /usr/bin/whatis $@ > /dev/null
-
-    if [ $? -eq 0 ]; then
-        /usr/bin/vim -c "Man $@" -c "silent! only" -c "nmap q :q<cr>"
+    if [ $# -eq 1 ]; then
+        /usr/bin/whatis $@ > /dev/null
+        if [ $? -eq 0 ]; then
+            /usr/bin/vim -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
+        else
+            /usr/bin/man "$@"
+        fi
+    elif [[ $# -eq 2 && "$1" =~ "[[:digit:]]" ]]; then
+        /usr/bin/vim -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
     else
-        /usr/bin/man "$@"
+        echo "usage: $0 [page] keyword"
     fi
 }
 
