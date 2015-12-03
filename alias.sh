@@ -12,6 +12,9 @@ then
     unalias di
 fi
 
+unalias grep
+alias grep='grep -P --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
+
 # general
 alias 关机='sudo poweroff'
 alias hub=$HOME/src/tools/hub
