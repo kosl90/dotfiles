@@ -6,8 +6,10 @@
 	editor = vim
 [alias]
 	st = status -sb
-	sta = status -sb --untracked-files=all
 	stu = status -sb --untracked-files=no
+	sti = status -sb --ignored
+	sta = status -sb --ignored --untracked-files=normal
+	stv = status -sb --ignored --untracked-files=all
 	unstage = reset HEAD --
 	ci = commit
 	co = checkout
