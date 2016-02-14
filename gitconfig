@@ -50,7 +50,7 @@
 [grep]
 	lineNumber = true
 [gitreview]
-	username = liliqiang
+	username = kosl90
 [merge]
 	ff = true
 [apply]
