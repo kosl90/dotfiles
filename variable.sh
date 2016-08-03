@@ -26,6 +26,14 @@ PATH=$HOME/.cabal/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
 #PATH=/usr/local/sml/bin:$PATH
 
+if [ -d $HOME/bin ]
+then
+    for i in `find -L $HOME/bin -maxdepth 1 -type d`;
+    do
+        PATH=$PATH:$i
+    done
+fi
+
 if [ -d $HOME/GAE ]
 then
     export GAE_PATH=$HOME/GAE
