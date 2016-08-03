@@ -1,14 +1,15 @@
 #!/bin/sh
-OS=`grep ID /etc/os-release | cut -d= -f2`
+OS=`grep -w ID /etc/os-release | cut -d= -f2`
+echo "OS: $OS"
 
-if [ $OS = "arch" ]
+if [ X"$OS" = X"arch" ]
 then
     INS="pacman -S"
 else
     INS="apt-get install"
 fi
 
-echo $INS
+#echo $INS
 
 if [ ! $USER = "root" ]
 then
