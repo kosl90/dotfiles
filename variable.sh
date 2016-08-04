@@ -21,18 +21,22 @@ fi
 #export SBT_OPTS="${SBT_OPTS} -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=7070"
 #export SBT_OPTS="${SBT_OPTS} -DhttpProxy.Host=127.0.0.1 -DhttoProxy.Port=7070"
 
+USER_LOCAL_BIN=$HOME/.local/bin
+if ! [ -d $USER_LOCAL_BIN ]
+then
+    mkdir -fp $USER_LOCAL_BIN
+fi
+
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=$HOME/.cabal/bin:$PATH
-PATH=$HOME/.local/bin:$PATH
 #PATH=/usr/local/sml/bin:$PATH
 
-if [ -d $HOME/bin ]
-then
-    for i in `find -L $HOME/bin -maxdepth 1 -type d`;
-    do
-        PATH=$PATH:$i
-    done
-fi
+USER_LOCAL_PATH=$USER_LOCAL_BIN
+for i in `find -L $USER_LOCAL_BIN -mindepth 1 -maxdepth 1 -type d`;
+do
+    USER_LOCAL_PATH=$USER_LOCAL_PATH:$i
+done
+PATH=$USER_LOCAL_PATH:$PATH
 
 if [ -d $HOME/GAE ]
 then
