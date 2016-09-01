@@ -24,7 +24,7 @@ fi
 USER_LOCAL_BIN=$HOME/.local/bin
 if ! [ -d $USER_LOCAL_BIN ]
 then
-    mkdir -fp $USER_LOCAL_BIN
+    mkdir -p $USER_LOCAL_BIN
 fi
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
