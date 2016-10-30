@@ -34,7 +34,12 @@ PATH=$HOME/.cabal/bin:$PATH
 USER_LOCAL_PATH=$USER_LOCAL_BIN
 for i in `find -L $USER_LOCAL_BIN -mindepth 1 -maxdepth 1 -type d`;
 do
-    USER_LOCAL_PATH=$USER_LOCAL_PATH:$i
+    if [ -d $i/bin ]
+    then
+        USER_LOCAL_PATH=$USER_LOCAL_PATH:$i/bin
+    elif [ -d $i/usr/bin ]
+        USER_LOCAL_PATH=$USER_LOCAL_PATH:$i/usr/bin
+    fi
 done
 PATH=$USER_LOCAL_PATH:$PATH
 

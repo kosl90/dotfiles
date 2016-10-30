@@ -89,10 +89,10 @@ EOF
 }
 
 function add_to_user_local_bin() {
-    target=$1
-    if [ -z $1 ]
+    target=`pwd`
+    if ! [ -z $1 ]
     then
-        target=`pwd`
+        target=`realpath $1`
     fi
     ln -sf $target $HOME/.local/bin
     src # oh-my-zsh zsh-reload plugin
