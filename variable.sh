@@ -38,6 +38,7 @@ do
     then
         USER_LOCAL_PATH=$USER_LOCAL_PATH:$i/bin
     elif [ -d $i/usr/bin ]
+    then
         USER_LOCAL_PATH=$USER_LOCAL_PATH:$i/usr/bin
     fi
 done
