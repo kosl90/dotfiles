@@ -31,9 +31,11 @@ soft-gui:
 	$(INS) terminator synapse devhelp emacs dconf-tools\
 		d-feet mercurial gtk-chtheme
 
+curl:
+	$(INS) curl
 
-soft-no-gui:
-	$(INS) install cmake cmake-curses-gui zsh gdb git \
+soft-no-gui: curl
+	$(INS) cmake cmake-curses-gui zsh gdb git \
 		clang-3.5 libclang-3.5-dev tmux manpages-posix-dev\
 		exuberant-ctags subversion autojump w3m
 
