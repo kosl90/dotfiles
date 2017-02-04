@@ -37,6 +37,7 @@
 [core]
 	safecrlf = true
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [log]
 	decorate = true
 [diff]
