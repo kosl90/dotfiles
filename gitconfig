@@ -28,6 +28,7 @@
 	dw = diff --word-diff
 	dl = difftool
 	dlc = difftool --cached
+	untrack = rm --cache --
 [color "diff"]
 	whitespace = red reverse
 [credential]
