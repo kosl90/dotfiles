@@ -52,3 +52,5 @@
 	lineNumber = true
 [merge]
 	ff = true
+[fetch]
+	prune = true
