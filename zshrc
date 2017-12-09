@@ -38,6 +38,8 @@ plugins=(zsh_reload git git-extras extract urltools vundle python debian npm mer
 
 source $ZSH/oh-my-zsh.sh
 
+umask 022
+
 # Customize to your needs...
 
 # source $ZSH/custom/incr*.zsh
@@ -50,7 +52,7 @@ fi
 export CONF_PATH=$HOME/.dotfiles
 source $CONF_PATH/shellrc
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/depot_tools:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
