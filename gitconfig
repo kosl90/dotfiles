@@ -6,6 +6,7 @@
 	editor = vim
 [alias]
 	st = status -sb
+	ts = status -sb
 	stu = status -sb --untracked-files=no
 	sti = status -sb --ignored
 	sta = status -sb --ignored --untracked-files=normal
