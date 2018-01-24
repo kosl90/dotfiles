@@ -11,12 +11,19 @@ install = ln -fs `pwd`/$(1) ~/.$(1);
 
 INS?=
 
+ZC=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
+
 config-files:
 	$(foreach file, $(files), $(call install,$(file)))
 
 
 zsh-config:
-	if ! [ -d ~/.oh-my-zsh ]; then git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; else echo "oh-my-zsh is already installed"; fi
+	if ! [ -d ~/.oh-my-zsh ]; then \
+		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
+		git clone https://github.com/zsh-users/zsh-autosuggestions $ZC/zsh-autosuggestions; \
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZC/zsh-syntax-highlighting; \
+		git clone https://github.com/zsh-users/zsh-completions $ZC/zsh-completions; \
+       	else echo "oh-my-zsh is already installed"; fi
 
 
 vim-config:
