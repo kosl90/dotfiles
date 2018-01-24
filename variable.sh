@@ -77,3 +77,8 @@ fi
 
 # to fix tmux connect dbus failed
 # unset DBUS_SESSION_BUS_ADDRESS
+
+# for npm
+export PHANTOMJS_CDNURL=https://npm.taobao.org/dist/phantomjs/
+export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
+export CHROMEDRIVER_CDNURL=https://npm.taobao.org/mirrors/chromedriver
