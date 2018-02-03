@@ -11,19 +11,27 @@ install = ln -fs `pwd`/$(1) ~/.$(1);
 
 INS?=
 
-ZCP=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins
+ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 
 config-files:
 	$(foreach file, $(files), $(call install,$(file)))
 
 
-zsh-config:
+zsh-config: zsh-oh-my-zsh zsh-plugins
 	if ! [ -d ~/.oh-my-zsh ]; then \
 		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
-		git clone https://github.com/zsh-users/zsh-autosuggestions $ZCP/zsh-autosuggestions; \
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZCP/zsh-syntax-highlighting; \
-		git clone https://github.com/zsh-users/zsh-completions $ZCP/zsh-completions; \
        	else echo "oh-my-zsh is already installed"; fi
+
+zsh-plugins:
+	@echo zsh plugin directory: ${ZCP}
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZCP}/zsh-autosuggestions; \
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZCP}/zsh-syntax-highlighting; \
+	git clone https://github.com/zsh-users/zsh-completions ${ZCP}/zsh-completions;
+
+zsh-oh-my-zsh:
+	if ! [ -d ~/.oh-my-zsh ]; then \
+		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
+	else echo "oh-my-zsh is already installed"; fi
 
 
 vim-config:

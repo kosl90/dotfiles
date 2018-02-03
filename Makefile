@@ -19,6 +19,9 @@ no-gui:
 zsh-config:
 	@sh ./install.sh zsh-config
 
+zsh-plugins:
+	@sh ./install.sh zsh-plugins
+
 
 vim-config:
 	@sh ./install.sh vim-config
