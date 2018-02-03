@@ -43,7 +43,7 @@ chsh:
 
 
 soft-gui:
-	$(INS) terminator synapse devhelp emacs dconf-tools\
+	$(INS) terminator synapse devhelp dconf-tools\
 		d-feet mercurial gtk-chtheme
 
 curl:
@@ -52,7 +52,7 @@ curl:
 soft-no-gui: curl
 	$(INS) cmake cmake-curses-gui zsh gdb git \
 		clang libclang-dev tmux manpages-posix-dev\
-		exuberant-ctags subversion autojump w3m
+		exuberant-ctags subversion autojump w3m cmake-extras
 
 
 xmonad:
