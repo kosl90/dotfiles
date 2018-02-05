@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip
 
 all:
 	@sh ./install.sh
@@ -37,3 +37,6 @@ chsh:
 
 xmonad:
 	@sh ./install.sh xmonad
+
+pip:
+	@sh ./install.sh pip

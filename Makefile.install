@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip
 
 all: soft-gui no-gui
 
@@ -12,8 +12,13 @@ install = ln -fs `pwd`/$(1) ~/.$(1);
 INS?=
 
 ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
+PIP_CONFIG=$${HOME}/.config/pip
 
-config-files:
+pip:
+	@mkdir -p ${PIP_CONFIG}
+	ln -fs `pwd`/pip.conf ${PIP_CONFIG}/pip.conf
+
+config-files: pip
 	$(foreach file, $(files), $(call install,$(file)))
 
 
