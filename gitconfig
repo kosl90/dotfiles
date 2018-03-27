@@ -32,6 +32,11 @@
 	untrack = rm --cache --
 [color "diff"]
 	whitespace = red reverse
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
 [credential]
 	helper = cache --timeout=36000
 [push]
@@ -40,6 +45,7 @@
 	safecrlf = true
 	editor = vim
 	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [log]
 	decorate = true
 [diff]
@@ -59,3 +65,8 @@
 	rebase = true
 [commit]
 	template = ~/.gitmessage
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

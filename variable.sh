@@ -69,6 +69,8 @@ then
     fi
 fi
 
+PATH="$HOME/.dotfiles/diff-so-fancy:$PATH"
+
 # TODO: $GOROOT/bin
 if ! [ -z $GOPATH ]
 then
