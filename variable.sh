@@ -84,3 +84,7 @@ fi
 export PHANTOMJS_CDNURL=https://npm.taobao.org/dist/phantomjs/
 export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 export CHROMEDRIVER_CDNURL=https://npm.taobao.org/mirrors/chromedriver
+
+# for flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
