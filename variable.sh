@@ -71,11 +71,9 @@ fi
 
 PATH="$HOME/.dotfiles/diff-so-fancy:$PATH"
 
-# TODO: $GOROOT/bin
-if ! [ -z $GOPATH ]
-then
-    PATH=$GOPATH/bin:/usr/lib/go/bin:$PATH
-fi
+PATH=$GOPATH/bin:$GOROOT/bin:/usr/lib/go/bin:$PATH
+
+PATH=$HOME/.pip/bin:$HOME/.yarn/bin:$PATH
 
 # to fix tmux connect dbus failed
 # unset DBUS_SESSION_BUS_ADDRESS

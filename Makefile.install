@@ -23,6 +23,7 @@ config-files: pip
 
 
 zsh-config: zsh-oh-my-zsh zsh-plugins
+	[ -f $$HOME/.zshrc.local ] || touch $$HOME/.zshrc.local; \
 	if ! [ -d ~/.oh-my-zsh ]; then \
 		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
        	else echo "oh-my-zsh is already installed"; fi
