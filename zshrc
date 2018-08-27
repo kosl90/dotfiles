@@ -39,7 +39,7 @@ zsh_reload git git-extras extract urltools vundle python
 debian npm mercurial node rvm svn tmux go rake ruby gem
 cabal pip docker sbt scala nmap autojump rails nvm
 zsh-syntax-highlighting zsh-completions zsh-autosuggestions
-git-open
+git-open ng
 )
 
 source $ZSH/oh-my-zsh.sh
