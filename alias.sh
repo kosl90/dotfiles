@@ -13,7 +13,12 @@ then
 fi
 
 unalias grep
-alias grep='grep -P --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
+if [ $OS = 'Linux' ];
+then
+  alias grep='grep -P --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
+else
+  alias grep='grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn,.pc}'
+fi
 
 # general
 alias synapse='(synapse -s &)'
@@ -46,16 +51,27 @@ alias release_version='lsb_release -rs'
 
 
 # alias for ls
-alias ls="ls -F --color=auto"
+if [ $OS = 'Linux' ]; then
+  alias ll="ls -Flh --color=auto"
+  alias ls="ls -F --color=auto"
+else
+  alias ll="ls -FlhG"
+  alias ls='ls -FG'
+fi
 alias l=ls
 alias lls=ls
-alias ll="ls -Flh --color=auto"
 
 
 # alias for make
 alias mc='make clean'
 alias mr='make run'
-alias mk="make -j$(($(grep processor /proc/cpuinfo | wc -l) + 1))"
+
+if [ $OS = 'Linux' ];then
+  alias mk="make -j$(($(grep processor /proc/cpuinfo | wc -l) + 1))"
+else
+  alias mk='make'
+fi
+
 alias mdc='make distclean'
 alias mkd='make dist'
 

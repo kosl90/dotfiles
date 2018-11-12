@@ -1,5 +1,7 @@
 # CONF_PATH should be defined out of shellrc, like zshrc
 # and then source $CONF_PATH/shellrc
+OS=$(uname)
+
 source $CONF_PATH/variable.sh
 source $CONF_PATH/func.sh
 source $CONF_PATH/alias.sh
