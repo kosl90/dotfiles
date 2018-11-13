@@ -60,8 +60,6 @@ fi
 export CONF_PATH=$HOME/.dotfiles
 source $CONF_PATH/shellrc
 
-[ -f $HOME/.zshrc.local ] && . $HOME/.zshrc.local
-
 export PATH="$HOME/depot_tools:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"

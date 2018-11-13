@@ -6,7 +6,7 @@ all: soft-gui no-gui
 no-gui: config-files soft-no-gui zsh-config vim-config chsh nvm
 
 
-files = toprc zshrc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc gitignore_global gitmessage condarc
+files = toprc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc gitignore_global gitmessage condarc
 install = ln -fs `pwd`/$(1) ~/.$(1);
 
 INS?=
@@ -25,10 +25,9 @@ nvm:
 	mkdir -fp $$HOME/.nvm
 
 zsh-config: zsh-oh-my-zsh zsh-plugins
-	[ -f $$HOME/.zshrc.local ] || touch $$HOME/.zshrc.local; \
-	if ! [ -d ~/.oh-my-zsh ]; then \
-		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
-       	else echo "oh-my-zsh is already installed"; fi
+	ln -fs `pwd`/zshrc $${HOME}/.zshrc.repo
+	[ -f $${HOME}/.zshrc.repo ] && echo '. $${HOME}/.zshrc.repo' >> $${HOME}/.zshrc;
+
 
 zsh-plugins:
 	@echo zsh plugin directory: ${ZCP}
