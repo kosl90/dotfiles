@@ -5,6 +5,19 @@ all: soft-gui no-gui
 
 no-gui: config-files soft-no-gui zsh-config vim-config chsh nvm
 
+define installZshPlugin
+    url=$(1); \
+        dist=$(2); \
+        name=`echo $(1) | awk -F'/' '{print $$NF}'`; \
+        printf "installing zsh plugin $${name}..."; \
+        if [ -d $(ZCP)/$${name} ]; then \
+            echo "already installed"; \
+        else \
+            git clone $${url} $(ZCP)/$${name}; \
+            echo 'done'; \
+        fi
+endef
+
 
 files = toprc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc gitignore_global gitmessage condarc
 install = ln -fs `pwd`/$(1) ~/.$(1);
@@ -31,15 +44,17 @@ zsh-config: zsh-oh-my-zsh zsh-plugins
 
 zsh-plugins:
 	@echo zsh plugin directory: ${ZCP}
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZCP}/zsh-autosuggestions; \
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZCP}/zsh-syntax-highlighting; \
-	git clone https://github.com/zsh-users/zsh-completions ${ZCP}/zsh-completions; \
-        git clone https://github.com/paulirish/git-open.git ${ZCP}/git-open
+	@$(call installZshPlugin,https://github.com/zsh-users/zsh-autosuggestions)
+	@$(call installZshPlugin,https://github.com/zsh-users/zsh-syntax-highlighting)
+	@$(call installZshPlugin,https://github.com/zsh-users/zsh-completions)
+	@$(call installZshPlugin,https://github.com/paulirish/git-open)
 
 zsh-oh-my-zsh:
+	@printf 'installing oh-my-zsh...'; \
 	if ! [ -d ~/.oh-my-zsh ]; then \
-		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
-	else echo "oh-my-zsh is already installed"; fi
+            git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
+            echo 'done'; \
+        else echo 'already installed'; fi
 
 
 vim-config:
