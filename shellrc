@@ -6,6 +6,9 @@ source $CONF_PATH/variable.sh
 source $CONF_PATH/func.sh
 source $CONF_PATH/alias.sh
 
+# [ -d $HOME/workspace ] || mkdir -p $HOME/workspace
+# [ -d $HOME/VirtualEnv] || mkdir -p $HOME/VirtualEnv
+
 # export http_proxy="http://localhost:8087"
 
 #source $WORKSPACE/VirtualEnv/develop/bin/activate
@@ -20,3 +23,11 @@ else
 fi
 [[ -s $AUTOJUMP_PATH ]] && source $AUTOJUMP_PATH
 unset AUTOJUMP_PATH
+
+export PATH="$HOME/depot_tools:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+# NVM/FZF/...
+export NVM_DIR="$HOME/.nvm"
+[ -d "$NVM_DIR" ] || mkdir $NVM_DIR
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
