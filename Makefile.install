@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm, bash-rc, shellrc
 
 all: soft-gui no-gui
 
@@ -55,6 +55,14 @@ zsh-oh-my-zsh:
             git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh; \
             echo 'done'; \
         else echo 'already installed'; fi
+
+
+bash-rc:
+	ln -fs `pwd`/bashrc $${HOME}/.bashrc.repo
+	echo '. $${HOME}/.bashrc.repo' >> ~/.bashrc
+
+
+shellrc: zsh-config bash-rc
 
 
 vim-config:
