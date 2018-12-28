@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm, bash-rc, shellrc
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm, bash-rc, shellrc, zsh-rc
 
 all: soft-gui no-gui
 
@@ -26,6 +26,7 @@ INS?=
 
 ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 PIP_CONFIG=$${HOME}/.config/pip
+USER_DOTFILE_PATH=$${HOME}/$(shell basename $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))))
 
 pip:
 	@mkdir -p ${PIP_CONFIG}
@@ -37,9 +38,16 @@ config-files: pip
 nvm:
 	mkdir -fp $$HOME/.nvm
 
-zsh-config: zsh-oh-my-zsh zsh-plugins
+
+zsh-rc:
 	ln -fs `pwd`/zshrc $${HOME}/.zshrc.repo
-	[ -f $${HOME}/.zshrc.repo ] && echo '. $${HOME}/.zshrc.repo' >> $${HOME}/.zshrc;
+	[ -f $${HOME}/.zshrc.repo ] && \
+		echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
+		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
+		echo '. $${HOME}/.zshrc.repo' >> $${HOME}/.zshrc;
+
+
+zsh-config: zsh-oh-my-zsh zsh-plugins zsh-rc
 
 
 zsh-plugins:
@@ -58,8 +66,11 @@ zsh-oh-my-zsh:
 
 
 bash-rc:
-	ln -fs `pwd`/bashrc $${HOME}/.bashrc.repo
-	echo '. $${HOME}/.bashrc.repo' >> ~/.bashrc
+	ln -fs `pwd`/bashrc $${HOME}/.bashrc.repo;
+	[ -f $${HOME}/.bashrc.repo ] && \
+		echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.bashrc; \
+		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.bashrc; \
+		echo '. $${HOME}/.bashrc.repo' >> ~/.bashrc
 
 
 shellrc: zsh-config bash-rc

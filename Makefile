@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc, zsh-rc
 
 all:
 	@sh ./install.sh
@@ -46,3 +46,6 @@ bash-rc:
 
 shellrc:
 	@sh ./install.sh shellrc
+
+zsh-rc:
+	@sh ./install.sh zsh-rc
