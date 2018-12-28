@@ -12,6 +12,8 @@ then
     unalias di
 fi
 
+OS=$(uname)
+# echo "OS: $OS"
 unalias grep
 if [ $OS = 'Linux' ];
 then

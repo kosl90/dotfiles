@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# TODO: different distribution or platform has different package name,
+# use different file for distribution or platform. This may also leads
+# to dropping this install.sh file.
 if [ -f /etc/os-release ]; then
     OS=`grep -w ID /etc/os-release | cut -d= -f2`
 else
@@ -26,4 +30,4 @@ then
 fi
 
 
-make -f Makefile.install -e INS="$INS" $1
+make -f Makefile.real -e INS="$INS" $1

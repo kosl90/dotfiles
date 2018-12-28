@@ -1,10 +1,7 @@
-# CONF_PATH should be defined out of shellrc, like zshrc
-# and then source $CONF_PATH/shellrc
-OS=$(uname)
-
-source $CONF_PATH/variable.sh
-source $CONF_PATH/func.sh
-source $CONF_PATH/alias.sh
+# USER_DOTFILE_PATH should be defined out of shellrc, like ~/.zshrc
+source $USER_DOTFILE_PATH/shell/variable.sh
+source $USER_DOTFILE_PATH/shell/func.sh
+source $USER_DOTFILE_PATH/shell/alias.sh
 
 # [ -d $HOME/workspace ] || mkdir -p $HOME/workspace
 # [ -d $HOME/VirtualEnv] || mkdir -p $HOME/VirtualEnv
@@ -25,9 +22,3 @@ fi
 unset AUTOJUMP_PATH
 
 export PATH="$HOME/depot_tools:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-# NVM/FZF/...
-export NVM_DIR="$HOME/.nvm"
-[ -d "$NVM_DIR" ] || mkdir $NVM_DIR
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -s "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"

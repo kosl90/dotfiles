@@ -58,4 +58,4 @@ fi
 [ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
 
 export CONF_PATH=$HOME/.dotfiles
-source $CONF_PATH/shellrc
+source $CONF_PATH/shell/shellrc

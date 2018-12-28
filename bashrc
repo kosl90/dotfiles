@@ -117,4 +117,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.local/bin
 
 export CONF_PATH=$HOME/.dotfiles
-. $CONF_PATH/shellrc
+. $CONF_PATH/shell/shellrc
