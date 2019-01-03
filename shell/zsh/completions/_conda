@@ -272,7 +272,7 @@ except KeyError:
 }
 
 __conda_commands(){
-    local -a package maint environment help config special
+    local -a package maint environment help config special activate deactivate
     package=(
         search:'Search for packages and display their information.'
         install:'Install a list of packages into a specified conda environment.'
@@ -304,6 +304,12 @@ __conda_commands(){
         env:'Manage environments.'
         build:'tool for building conda packages'
         )
+    activate=(
+        activate:'activate virtual environment'
+    )
+    deactivate=(
+        deactivate:'deactivate virtual environment'
+    )
     _describe -t package_commands "package commands" package
     _describe -t maint_commands "maint commands" maint
     _describe -t environment_commands "environment commands" environment
@@ -311,6 +317,8 @@ __conda_commands(){
     _describe -t config_commands "config commands"  config
     _describe -t special_commands "special commands"  special
     _describe -t external_commands "external commands"  external
+    _describe -t activate_commands "environment commands" activate
+    _describe -t deactivate_commands "environment commands" deactivate
 }
 
 __conda_caching_policy() {
@@ -387,6 +395,11 @@ case $state in
     ;;
 (subcmd)
     case ${line[1]} in
+    (activate)
+        _alternative '__conda_envs'
+        ;;
+    (deactivate)
+        ;;
     (info)
         _arguments -C $help_opts \
                       '--json[report all output as json.]' \
