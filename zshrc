@@ -35,11 +35,54 @@ ZSH_THEME='candy'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-zsh_reload git git-extras extract urltools vundle python
-debian npm mercurial node rvm svn tmux go rake ruby gem
-cabal pip docker sbt scala nmap autojump rails nvm
-zsh-syntax-highlighting zsh-completions zsh-autosuggestions
-git-open ng
+zsh_reload
+zsh-syntax-highlighting
+zsh-completions
+zsh-autosuggestions
+
+# git tools
+git
+git-extras
+# git-open
+
+mercurial
+svn
+
+# python tools
+python
+pip
+
+# node tools
+node
+npm
+nvm
+ng # angular
+
+# go tools
+go
+
+# tools
+extract
+urltools
+tmux
+docker
+debian
+nmap
+autojump
+
+# haskell tools
+# cabal
+
+# ruby tools
+# rake
+# ruby
+# rails
+# gem
+# rvm
+
+# scala tools
+# sbt
+# scala
 )
 
 source $ZSH/oh-my-zsh.sh
