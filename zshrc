@@ -104,4 +104,3 @@ fi
 
 source $USER_DOTFILE_PATH/shell/shellrc
 source $USER_DOTFILE_PATH/shell/zsh/completions/zsh-completions.plugin.zsh
-source $USER_DOTFILE_PATH/shell/zsh/autoload-nvmrc
