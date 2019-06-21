@@ -18,6 +18,9 @@ My some configure files.
 * gtk
 * rvm
 
+## Env Vars
+- `DISABLE_NVM_AUTOLOAD_NVMRC` empty for enable autoload
+
 ## Quick start
 
 `make` will install zsh config, vim config, nvm and some other config files.
