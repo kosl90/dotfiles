@@ -25,7 +25,13 @@ endif
 
 INS?=$(DETECT_INS)
 
-all: zsh-config vim-config config-files nvm
+files=toprc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc gitignore_global gitmessage condarc
+
+ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
+PIP_CONFIG=$${HOME}/.config/pip
+USER_DOTFILE_PATH=$${HOME}/$(shell basename $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))))
+
+all: config-files zsh-config vim-config
 
 no-gui: config-files soft-no-gui zsh-config vim-config chsh
 
@@ -43,14 +49,8 @@ define installZshPlugin
 endef
 
 define installConfig
-  ln -fs `pwd`/$(1) ~/.$(1);
+  ln -fs ${USER_DOTFILE_PATH}/$(1) ~/.$(1);
 endef
-
-files=toprc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc gitignore_global gitmessage condarc
-
-ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
-PIP_CONFIG=$${HOME}/.config/pip
-USER_DOTFILE_PATH=$${HOME}/$(shell basename $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))))
 
 pip:
 	@printf '>> installing pip config...'
@@ -88,7 +88,7 @@ zsh-rc:
 	@echo 'done'
 
 
-zsh-config: zsh-oh-my-zsh zsh-plugins zsh-rc
+zsh-config: zsh-rc zsh-oh-my-zsh zsh-plugins
 
 
 zsh-plugins:

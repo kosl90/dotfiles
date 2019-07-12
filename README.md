@@ -18,6 +18,9 @@ My some configure files.
 * gtk
 * rvm
 
+some configurations will inject some source code into shell rc file like .zshrc,
+please make sure you are running the correct shell.
+
 ## Env Vars
 - `DISABLE_NVM_AUTOLOAD_NVMRC` empty for enable autoload
 
