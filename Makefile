@@ -81,11 +81,10 @@ nvm:
 
 zsh-rc:
 	@printf '>> installing zshrc...'
-	@ln -fs `pwd`/zshrc $${HOME}/.zshrc.repo
-	@[ -f $${HOME}/.zshrc.repo ] && \
-		echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
+	@[ -f $${HOME}/.zshrc ] || \
+		(echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
 		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
-		echo '. $${HOME}/.zshrc.repo' >> $${HOME}/.zshrc;
+		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc;)
 	@echo 'done'
 
 
