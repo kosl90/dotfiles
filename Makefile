@@ -43,6 +43,7 @@ define installZshPlugin
         if [ -d $(ZCP)/$${name} ]; then \
             echo "already installed"; \
         else \
+            echo; \
             git clone $${url} $(ZCP)/$${name}; \
             echo 'done'; \
         fi
