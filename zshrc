@@ -104,3 +104,6 @@ fi
 
 source $USER_DOTFILE_PATH/shell/shellrc
 source $USER_DOTFILE_PATH/shell/zsh/completions/zsh-completions.plugin.zsh
+
+export ADBLOCK=true
+export DISABLE_OPENCOLLECTIVE=true
