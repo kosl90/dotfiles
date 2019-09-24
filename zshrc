@@ -68,6 +68,7 @@ extract
 urltools
 tmux
 docker
+docker-compose
 debian
 nmap
 autojump
