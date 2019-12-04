@@ -94,6 +94,10 @@ source $ZSH/oh-my-zsh.sh
 
 umask 022
 
+if ! [ -z $SSH_CLIENT ]; then
+    PS1="(ssh)${PS1}"
+fi
+
 # Customize to your needs...
 
 # source $ZSH/custom/incr*.zsh
