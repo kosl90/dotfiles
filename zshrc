@@ -73,6 +73,8 @@ debian
 nmap
 autojump
 
+kubectl
+
 # haskell tools
 # cabal
 
