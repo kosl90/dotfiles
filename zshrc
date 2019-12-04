@@ -104,7 +104,7 @@ fi
 [ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
 
 source $USER_DOTFILE_PATH/shell/shellrc
-source $USER_DOTFILE_PATH/shell/zsh/completions/zsh-completions.plugin.zsh
+export fpath=($fpath $USER_DOTFILE_PATH/shell/zsh/completions)
 
 export ADBLOCK=true
 export DISABLE_OPENCOLLECTIVE=true
