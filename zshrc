@@ -57,11 +57,14 @@ node
 npm
 nvm
 ng # angular
+yarn
 
 # go tools
 go
 
 rust
+cargo
+ripgrep
 
 # tools
 extract
