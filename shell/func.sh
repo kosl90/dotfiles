@@ -124,3 +124,33 @@ function nvm_upgrade() {
     git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
     ) && \. "$NVM_DIR/nvm.sh"
 }
+
+function update-pandafan() {
+    if [ "$PANDAFAN_CONFIG_URL" = "" ]; then
+        echo "missing \$PANDAFAN_CONFIG_URL";
+        exit
+    fi
+
+    local f=${HOME}/.config/clash/config.yaml
+    if [ -f $f ]; then
+        local backupConfig=$HOME/.config/clash/config.old.yaml
+        echo -n "backup file exists, the old backup file will be overwriten[Y/n]: "
+        read yesOrNo
+        yesOrNo=${yesOrNo:-"y"}
+        if [[ $yesOrNo =~ [yY] ]];
+        then
+            echo "backup the old configuration to ${backupConfig}"
+            cp -f $f ${backupConfig}
+        else
+            echo "cancel update"
+            return
+        fi
+    fi
+    wget --output-document $f ${PANDAFAN_CONFIG_URL}
+}
+
+function findRcPackages() {
+    if grep -i 'ubuntu|deepin|debian' /etc/os-release &> /dev/null; then
+        dpkg -l | grep '^rc' | awk '{print $2}'
+    fi
+}
