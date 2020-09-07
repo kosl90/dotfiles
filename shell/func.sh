@@ -150,7 +150,7 @@ function update-pandafan() {
 }
 
 function findRcPackages() {
-    if grep -i 'ubuntu|deepin|debian' /etc/os-release &> /dev/null; then
+    if grep -iP 'ubuntu|deepin|debian' /etc/os-release &> /dev/null ; then
         dpkg -l | grep '^rc' | awk '{print $2}'
     fi
 }
