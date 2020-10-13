@@ -60,7 +60,7 @@ ng # angular
 yarn
 
 # go tools
-go
+golang
 
 rust
 cargo
