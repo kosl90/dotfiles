@@ -46,13 +46,23 @@
 	safecrlf = true
 	editor = vim
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	ignorecase = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true # use n and N to move between diff sections
+	line-numbers = true
+	features = side-by-side decorations
+	light = false # set to true if you're in a terminal w/ a light background color
+	syntax-theme = "TwoDark" #"Monokai Extended"
+	plus-style = "syntax #3CB371"
 [log]
 	decorate = true
 [diff]
 	wordRegex = \\S|\\s$
 	tool = vimdiff
+	colorMoved = default
 [difftool "vimdiff"]
 	cmd = vimdiff \"$REMOTE\" \"$LOCAL\"
 [clean]
@@ -61,6 +71,7 @@
 	lineNumber = true
 [merge]
 	ff = true
+#conflictstyle = diff3
 [fetch]
 	prune = true
 [pull]
