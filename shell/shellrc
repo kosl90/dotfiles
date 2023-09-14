@@ -23,3 +23,5 @@ unset AUTOJUMP_PATH
 
 export PATH="$HOME/depot_tools:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+# export BAT_THEME="Visual Studio Dark+"
+export BAT_THEME="TwoDark" # base16-256
