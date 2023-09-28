@@ -84,8 +84,13 @@ zsh-rc:
 	@printf '>> installing zshrc...'
 	@[ -f $${HOME}/.zshrc ] || \
 		(echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
+		echo '### CONFIGURATION SWITCH ###' >> $${HOME}/.zshrc; \
+		echo 'USE_PURE_PROMPT=true' >> $${HOME}/.zshrc; \
+		echo 'USE_BAT_FOR_MANPAGE=true' >> $${HOME}/.zshrc; \
+		echo '' >> $${HOME}/.zshrc; \
 		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
-		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc;)
+		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc; \
+		echo '. $${USER_DOTFILE_PATH}/shell/zsh/autoload-nvmrc' >> ~/.zshrc;)
 	@echo 'done'
 
 
@@ -95,7 +100,8 @@ zsh-config: zsh-rc zsh-oh-my-zsh zsh-plugins
 zsh-plugins:
 	@echo '>>' zsh plugin directory: ${ZCP}
 	@$(call installZshPlugin,https://github.com/zsh-users/zsh-autosuggestions)
-	@$(call installZshPlugin,https://github.com/zsh-users/zsh-syntax-highlighting)
+	# @$(call installZshPlugin,https://github.com/zsh-users/zsh-syntax-highlighting)
+	@$(call installZshPlugin,https://github.com/z-shell/F-Sy-H)
 	@$(call installZshPlugin,https://github.com/zsh-users/zsh-completions)
 	@$(call installZshPlugin,https://github.com/paulirish/git-open)
 

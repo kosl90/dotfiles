@@ -35,9 +35,10 @@ ZSH_THEME='candy'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-zsh-syntax-highlighting
+# zsh-syntax-highlighting
 zsh-completions
 zsh-autosuggestions
+F-Sy-H
 
 jsontools
 encode64
@@ -118,3 +119,17 @@ export fpath=($fpath $USER_DOTFILE_PATH/shell/zsh/completions)
 
 export ADBLOCK=true
 export DISABLE_OPENCOLLECTIVE=true
+
+# echo USE_PURE_PROMPT $USE_PURE_PROMPT
+if [[ $USE_PURE_PROMPT = "true" ]]; then
+    # echo USE_PURE_PROMPT
+    autoload -U promptinit; promptinit
+    prompt pure
+fi
+
+# echo USE_BAT_FOR_MANPAGE $USE_BAT_FOR_MANPAGE
+if [ $USE_BAT_FOR_MANPAGE = "true" ]; then
+    # echo set MANPAGER
+    # use bat to do syntax highlight
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
