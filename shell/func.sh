@@ -12,46 +12,55 @@ function cman() {
 
 
 function vman() {
+    local VI=/usr/bin/vim
+    if [ -f /usr/local/bin/vim ]; then
+        local=/usr/local/bin/vim
+    fi
+
     if [ $# -eq 1 ]; then
         /usr/bin/whatis $@ > /dev/null
         if [ $? -eq 0 ]; then
-            /usr/bin/vim -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
+            $VI -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
         else
             /usr/bin/man "$@"
         fi
     elif [[ $# -eq 2 && "$1" =~ "[[:digit:]]" ]]; then
-        /usr/bin/vim -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
+        $VI -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
     else
         echo "usage: $0 [page] keyword"
     fi
 }
 
 
-function gcd() {
-    if [ -d "$(git rev-parse --show-toplevel)/$1" ]
-    then
-        cd $(git rev-parse --show-toplevel)/$1
-    else
-        echo "no such a directory $(git rev-parse --show-toplevel)/$1"
-    fi
-}
+# function gcd() {
+#     if [ -d "$(git rev-parse --show-toplevel)/$1" ]
+#     then
+#         cd $(git rev-parse --show-toplevel)/$1
+#     else
+#         echo "no such a directory $(git rev-parse --show-toplevel)/$1"
+#     fi
+# }
+#
+# # this is from git plugin.
+# # unalias g alias to make g function work.
+# if alias g >& /dev/null
+# then
+#     unalias g
+# fi
+# function g() {
+#     case $1 in
+#         "cd")
+#             shift
+#             gcd $@
+#             ;;
+#         *)
+#             git $@
+#             ;;
+#     esac
+# }
 
-# this is from git plugin.
-# unalias g alias to make g function work.
-if alias g >& /dev/null
-then
-    unalias g
-fi
-function g() {
-    case $1 in
-        "cd")
-            shift
-            gcd $@
-            ;;
-        *)
-            git $@
-            ;;
-    esac
+function groot() {
+    git rev-parse --show-toplevel
 }
 
 function version() {
@@ -154,3 +163,16 @@ function findRcPackages() {
         dpkg -l | grep '^rc' | awk '{print $2}'
     fi
 }
+
+function useClash() {
+    export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890
+}
+
+function useNoClash() {
+    export HTTP_PROXY= HTTPS_PROXY ALL_PROXY=
+}
+
+function useNoProxy() {
+    useNoClash
+}
+

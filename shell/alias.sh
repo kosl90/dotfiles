@@ -1,10 +1,3 @@
-# this is from debian plugin for upgrade,
-# unalias ag to make silversearcher-ag work.
-if alias ag >& /dev/null
-then
-    unalias ag
-fi
-
 # this is from debian plugin for dpkg -i,
 # unalias di to make di(a advanced disk information utility) work.
 if alias di >& /dev/null
@@ -28,10 +21,10 @@ alias t='tmux -2u'
 alias tmux='tmux -2u'
 alias sx=startx
 
-if [ -f $HOME/.config/user-dirs.dirs ]; then
-    alias god="cd $(grep 'XDG_DESKTOP_' $HOME/.config/user-dirs.dirs | cut -d= -f2)"
-fi
+if [ $OS = 'Linux' ]; then
+then
 alias gor='cd /run/shm'
+fi
 alias got='cd /tmp'
 
 alias py2HTTPServ='python2 -m SimpleHTTPServer'
@@ -87,11 +80,14 @@ alias mkd='make dist'
 
 
 # alias for ipython3
-# alias ipy3='ipython3'
-# alias ipyq3='ipython3 qtconsole'
-# alias ipyn3='ipython3 notebook'
-# alias pylab3='ipython3 --pylab'
-# alias pylabq3='ipython3 --pylab=qt'
+# if which ipython3 >& /dev/null
+# then
+#     alias ipy3='ipython3'
+#     alias ipyq3='ipython3 qtconsole'
+#     alias ipyn3='ipython3 notebook'
+#     alias pylab3='ipython3 --pylab'
+#     alias pylabq3='ipython3 --pylab=qt'
+# fi
 
 if [ -d $WORKSPACE/VirtualEnv ];
 then
@@ -103,32 +99,6 @@ fi
 alias vim='vim -p'
 alias vi=vim
 
-# alias for emacs
-if which emacs24 > /dev/null
-then
-    alias em="emacs24 -nw"
-else
-    alias em="emacs -nw"
-fi
-
-
-# alias for Qt
-alias qp="qmake -project"
-alias qm="qmake"
-
-alias qp5="$QT5PATH/bin/qmake -project"
-alias qm5="$QT5PATH/bin/qmake -makefile"
-
-
-# alias for scons
-alias sc="scons -Q"
-alias scc="scons -c"
-
-
-# alias man='vman'
-# alias man='cman'
-
-
 # alias for git
 alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
@@ -138,20 +108,19 @@ alias gdl='git difftool'
 alias gst="git status -sb"
 alias gdw="git diff --word-diff"
 
-
-# alias for ack
-if which ack-grep > /dev/null
+if which bat >& /dev/null
 then
-    alias ack="ack-grep"
-    alias ackp='ack-grep --pager=less'
-elif which ack > /dev/null
-then
-    alias ackp='ack --pager=less'
+    alias cat=bat
 fi
 
-alias sin="dbus-send --dest=com.deepin.dde.dock --print-reply --type=method_call /com/deepin/dde/dock com.deepin.dde.dock.ShowInspector"
+if which pnpm >& /dev/null
+then
+    alias pn=pnpm
+    alias pni="pnpm install"
+    alias b="pnpm build"
+    alias pns="pnpm start"
+    alias d="pnpm dev"
+    alias pnv="pnpm serve"
+fi
 
-# alias cnpm="npm --registry=https://registry.npm.taobao.org \
-#     --cache=$HOME/.npm/.cache/cnpm \
-#     --disturl=https://npm.taobao.org/dist \
-#     --userconfig=$HOME/.cnpmrc"
+# alias sin="dbus-send --dest=com.deepin.dde.dock --print-reply --type=method_call /com/deepin/dde/dock com.deepin.dde.dock.ShowInspector"

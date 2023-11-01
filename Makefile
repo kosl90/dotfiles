@@ -92,8 +92,7 @@ zsh-rc:
 		echo 'USE_BAT_FOR_MANPAGE=true' >> $${HOME}/.zshrc; \
 		echo '' >> $${HOME}/.zshrc; \
 		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
-		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc; \
-		echo '. $${USER_DOTFILE_PATH}/shell/zsh/autoload-nvmrc' >> ~/.zshrc;)
+		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc;)
 	@echo 'done'
 
 

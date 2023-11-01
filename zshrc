@@ -117,20 +117,6 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
 fi
 
 source $USER_DOTFILE_PATH/shell/shellrc
+source ${USER_DOTFILE_PATH}/shell/zsh/env
 
-export ADBLOCK=true
-export DISABLE_OPENCOLLECTIVE=true
-
-# echo USE_PURE_PROMPT $USE_PURE_PROMPT
-if [[ $USE_PURE_PROMPT = "true" ]]; then
-    # echo USE_PURE_PROMPT
-    autoload -U promptinit; promptinit
-    prompt pure
-fi
-
-# echo USE_BAT_FOR_MANPAGE $USE_BAT_FOR_MANPAGE
-if [ $USE_BAT_FOR_MANPAGE = "true" ]; then
-    # echo set MANPAGER
-    # use bat to do syntax highlight
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-fi
+[ -f $HOME/.cargo/env ] && source "$HOME/.cargo/env"
