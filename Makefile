@@ -28,7 +28,7 @@ endif
 
 INS?=$(DETECT_INS)
 
-files=toprc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 npmrc gitignore_global gitmessage condarc
+files=toprc tmux.conf gitconfig astylerc rvmrc gemrc fehbg gtkrc-2.0 gitignore_global gitmessage condarc
 
 ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 PIP_CONFIG=$${HOME}/.config/pip
@@ -65,6 +65,7 @@ pip:
 config-files: pip
 	@printf '>> installing other config files...'
 	@$(foreach file, $(files), $(call installConfig,$(file)))
+	@cp npmrc ~/.npmrc
 	@echo 'done'
 
 nvm:
