@@ -19,7 +19,7 @@ def readConfig(f):
 
 def findAuthorConfig(projectPath, config):
     for item in iter(config):
-        if projectPath.startswith(item['path_prefix']):
+        if projectPath.startswith(os.path.expandvars(item['path_prefix'])):
             return item
     return None
 
