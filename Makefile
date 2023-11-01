@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm, bash-rc, shellrc, zsh-rc
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm, bash-rc, shellrc, zsh-rc, mac, xcode-select, nvm-mac, brew, phantom
 
 OS:=$(shell uname)
 ifneq (,$(wildcard /etc/os-release))
@@ -11,15 +11,18 @@ DETECT_INS=
 ifeq (arch,$(OS))
   DETECT_INS=pacman -S
 else ifeq (Darwin,$(OS))
-  $(info >> Not support install in mac)
+  # $(info >> Not support install in mac)
+  DETECT_INS=brew install
 else
   DETECT_INS=apt install
 endif
 
 ifneq (root,$(USER))
   ifneq (,$(DETECT_INS))
-    $(info >> using sudo to install)
-    DETECT_INS=sudo $(DETECT_INS)
+    ifneq (Darwin,$(OS))
+      $(info >> using sudo to install)
+      DETECT_INS=sudo $(DETECT_INS)
+    endif
   endif
 endif
 
@@ -156,4 +159,15 @@ xmonad:
 	[ X$(INS) = X ] || $(INS) xmonad dmenu && \
 	git clone https://github.com/kosl90/xmonad-config ~/.xmonad && \
 	(cd ~/.xmonad; make)
+
+brew:
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+xcode-select:
+	xcode-select --install
+
+mac: xcode-select brew
+	$(INS) jq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm nvm iterm2 linearmouse
+
+phantom:
 
