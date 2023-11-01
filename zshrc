@@ -95,6 +95,10 @@ kubectl
 # scala
 )
 
+[ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
+fpath+=$USER_DOTFILE_PATH/shell/zsh/completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
 
 umask 022
@@ -112,10 +116,7 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
 	source '/etc/zsh_command_not_found'
 fi
 
-[ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
-
 source $USER_DOTFILE_PATH/shell/shellrc
-export fpath=($fpath $USER_DOTFILE_PATH/shell/zsh/completions)
 
 export ADBLOCK=true
 export DISABLE_OPENCOLLECTIVE=true
