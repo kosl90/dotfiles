@@ -167,7 +167,7 @@ xcode-select:
 	xcode-select --install
 
 mac: xcode-select brew
-	$(INS) jq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm nvm iterm2 linearmouse
+	$(INS) jq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm nvm iterm2 linearmouse pkg-config
 
 phantom:
 
