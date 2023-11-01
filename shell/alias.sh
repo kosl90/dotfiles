@@ -71,30 +71,6 @@ alias mdc='make distclean'
 alias mkd='make dist'
 
 
-# alias for ipython
-# alias ipy='ipython'
-# alias ipyq='ipython qtconsole'
-# alias ipyn='ipython notebook'
-# alias pylab='ipython --pylab'
-# alias pylabq='ipython --pylab=qt'
-
-
-# alias for ipython3
-# if which ipython3 >& /dev/null
-# then
-#     alias ipy3='ipython3'
-#     alias ipyq3='ipython3 qtconsole'
-#     alias ipyn3='ipython3 notebook'
-#     alias pylab3='ipython3 --pylab'
-#     alias pylabq3='ipython3 --pylab=qt'
-# fi
-
-if [ -d $WORKSPACE/VirtualEnv ];
-then
-    alias devpy="source $WORKSPACE/VirtualEnv/develop/bin/activate"
-fi
-
-
 # alias for vim
 alias vim='vim -p'
 alias vi=vim
@@ -104,9 +80,8 @@ alias glg="git log --graph --decorate"
 alias glo="git log --oneline --graph --decorate"
 alias gdf="git diff"
 alias gdc="git diff --cached"
-alias gdl='git difftool'
-alias gst="git status -sb"
 alias gdw="git diff --word-diff"
+alias gst="git status -sb"
 
 if which bat >& /dev/null
 then
