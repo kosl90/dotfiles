@@ -21,12 +21,6 @@ alias t='tmux -2u'
 alias tmux='tmux -2u'
 alias sx=startx
 
-if [ $OS = 'Linux' ]; then
-then
-alias gor='cd /run/shm'
-fi
-alias got='cd /tmp'
-
 alias py2HTTPServ='python2 -m SimpleHTTPServer'
 alias py3HTTPServ='python3 -m http.server'
 alias python2=python2.7
