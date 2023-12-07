@@ -34,9 +34,9 @@ ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 PIP_CONFIG=$${HOME}/.config/pip
 USER_DOTFILE_PATH=$${HOME}/$(shell basename $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))))
 
-all: config-files zsh-config vim-config
+all: config-files zsh-config vim-config kitty-config
 
-no-gui: config-files soft-no-gui zsh-config vim-config chsh
+no-gui: config-files soft-no-gui zsh-config vim-config kitty-config chsh
 
 define installZshPlugin
     url=$(1); \
@@ -125,7 +125,7 @@ bash-rc:
 		echo '. $${HOME}/.bashrc.repo' >> ~/.bashrc
 
 
-shellrc: zsh-config bash-rc
+shellrc: zsh-config kitty-config bash-rc
 
 
 vim-config:
@@ -174,6 +174,11 @@ mac: xcode-select brew
 mac-dev:
 	$(INS) pkg-config cmake cmake-docs
 	$(INS) --cask wireshark
+
+kitty-config:
+	@mkdir -p ${HOME}/.config/kitty/
+	@ln -fs ${USER_DOTFILE_PATH}/kitty.conf ${HOME}/.config/kitty/kitty.conf
+
 
 phantom:
 
