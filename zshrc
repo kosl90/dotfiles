@@ -120,3 +120,5 @@ source $USER_DOTFILE_PATH/shell/shellrc
 source ${USER_DOTFILE_PATH}/shell/zsh/env
 
 [ -f $HOME/.cargo/env ] && source "$HOME/.cargo/env"
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
