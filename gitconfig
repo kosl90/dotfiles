@@ -16,8 +16,8 @@
 	co = checkout
 	cb = checkout -b
 	br = branch
-        df = diff
-        dc = diff --cached
+	df = diff
+	dc = diff --cached
 	hist = log --graph --decorate
 	hist1 = log --oneline --graph --decorate
 	hist2 = log --format=\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -83,3 +83,5 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[http]
+  # proxy = http://127.0.0.1:xxxx
