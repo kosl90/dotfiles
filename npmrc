@@ -1,4 +1,4 @@
 npm-registry=https://registry.npmjs.org/
 cn-registry=https://registry.npmmirror.com/
-disturl=https://registry.npmmirror.com/node
+disturl=https://npmmirror.com/mirrors/node
 ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/
