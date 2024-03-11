@@ -1,4 +1,4 @@
-if [ NVM_ENABLED ]; then
+if [ -n $NVM_ENABLED ]; then
   autoload -U add-zsh-hook
   load-nvmrc() {
     if [ -n "$DISABLE_NVM_AUTOLOAD_NVMRC" ]; then

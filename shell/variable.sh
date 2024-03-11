@@ -78,6 +78,8 @@ fi
 
 # PATH="$HOME/.dotfiles/diff-so-fancy:$PATH"
 
+export GOPATH=$HOME/workspace/go
+export GOBIN=$GOPATH/bin
 PATH=$GOPATH/bin:$GOROOT/bin:/usr/lib/go/bin:$PATH
 
 PATH=$HOME/.pip/bin:$HOME/.yarn/bin:$PATH
