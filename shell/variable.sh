@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR=nvim
 export DISPLAY=:0
 
 if [ -d $HOME/Dropbox ]

@@ -55,7 +55,7 @@ alias lls=ls
 alias mc='make clean'
 alias mr='make run'
 
-if [ $OS = 'Linux' ];then
+if [ $OS = 'Linux' ]; then
   alias mk="make -j$(($(grep processor /proc/cpuinfo | wc -l) + 1))"
 else
   alias mk='make'
@@ -77,16 +77,16 @@ alias gdc="git diff --cached"
 alias gdw="git diff --word-diff"
 alias gst="git status -sb"
 
-if which bat >& /dev/null
-then
-    alias cat=bat
+if which bat >&/dev/null; then
+  alias cat=bat
 fi
 
-if which pnpm >& /dev/null
-then
+if which pnpm >&/dev/null; then
     alias pn=pnpm
     alias pni="pnpm install"
+    alias i="pnpm install"
     alias b="pnpm build"
+    alias pnb="pnpm build"
     alias pns="pnpm start"
     alias d="pnpm dev"
     alias pnv="pnpm serve"

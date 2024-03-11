@@ -12,6 +12,19 @@ ZSH_THEME='candy'
 # ZSH_THEME="nebirhos" # rvm
 # ZSH_THEME="sunaku"
 
+if [[ $USE_PROMPT = "p10k" ]]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+  # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+  # Initialization code that may require console input (password prompts, [y/n]
+  # confirmations, etc.) must go above this block; everything else may go below.
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+
+  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -39,6 +52,8 @@ plugins=(
 zsh-completions
 zsh-autosuggestions
 F-Sy-H
+
+pnpm-shell-completion
 
 jsontools
 encode64
@@ -104,7 +119,7 @@ source $ZSH/oh-my-zsh.sh
 umask 022
 
 if ! [ -z $SSH_CLIENT ]; then
-    PS1="(ssh)${PS1}"
+  PS1="(ssh)${PS1}"
 fi
 
 # Customize to your needs...
@@ -113,7 +128,7 @@ fi
 # source $ZSH/incr*.zsh
 
 if [[ -s '/etc/zsh_command_not_found' ]]; then
-	source '/etc/zsh_command_not_found'
+  source '/etc/zsh_command_not_found'
 fi
 
 source $USER_DOTFILE_PATH/shell/shellrc
