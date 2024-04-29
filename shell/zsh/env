@@ -2,7 +2,7 @@
 . ${USER_DOTFILE_PATH}/shell/zsh/autochange-git-committer
 
 # echo USE_PURE_PROMPT $USE_PURE_PROMPT
-if [[ $USE_PROMPT = "pure" ]]; then
+if [[ "$USE_PROMPT" = "pure" ]]; then
     # echo USE_PURE_PROMPT
     start_time=$(gdate +"%N")
     echo start at $(gdate +"%N")
@@ -14,13 +14,13 @@ if [[ $USE_PROMPT = "pure" ]]; then
 fi
 
 # echo USE_BAT_FOR_MANPAGE $USE_BAT_FOR_MANPAGE
-if [ $USE_BAT_FOR_MANPAGE = "true" ]; then
+if [ "$USE_BAT_FOR_MANPAGE" = "true" ]; then
     # echo set MANPAGER
     # use bat to do syntax highlight
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
-if [ $USE_PROMPT = "starship" ]; then
+if [[ "$USE_PROMPT" = "starship" ]]; then
     start_time=$(gdate +"%N")
     eval "$(starship init zsh)"
     end_time=$(gdate +"%N")
