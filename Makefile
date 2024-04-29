@@ -89,7 +89,7 @@ zsh-rc:
 	@[ -f $${HOME}/.zshrc ] || \
 		(echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
 		echo '### CONFIGURATION SWITCH ###' >> $${HOME}/.zshrc; \
-		echo 'USE_PURE_PROMPT=true' >> $${HOME}/.zshrc; \
+		echo 'USE_PROMPT="" # "p10k" | "pure" | "starship"' >> $${HOME}/.zshrc; \
 		echo 'USE_BAT_FOR_MANPAGE=true' >> $${HOME}/.zshrc; \
 		echo '' >> $${HOME}/.zshrc; \
 		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
