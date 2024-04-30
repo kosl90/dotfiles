@@ -155,7 +155,7 @@ xcode-select:
 mac: xcode-select brew
 	# anaconda
 	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree
-	$(INS) --cask linearmouse hiddenbar iterm2 raycast
+	$(INS) --cask linearmouse hiddenbar kitty iterm2 raycast
 
 mac-dev:
 	$(INS) pkg-config cmake cmake-docs
