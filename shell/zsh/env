@@ -1,4 +1,3 @@
-. ${USER_DOTFILE_PATH}/shell/zsh/autoload-nvmrc
 . ${USER_DOTFILE_PATH}/shell/zsh/autochange-git-committer
 
 # echo USE_PURE_PROMPT $USE_PURE_PROMPT
