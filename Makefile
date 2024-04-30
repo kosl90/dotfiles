@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, nvm, bash-rc, shellrc, zsh-rc, mac, xcode-select, nvm-mac, brew, phantom
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc, zsh-rc, mac, xcode-select, brew, phantom
 
 OS:=$(shell uname)
 ifneq (,$(wildcard /etc/os-release))
@@ -68,21 +68,7 @@ config-files: pip
 	@cp npmrc ~/.npmrc
 	@echo 'done'
 
-nvm:
-	@printf '>> installing nvm...'
-	@if ! [ -d $$HOME/.nvm ]; then \
-		echo;\
-		export NVM_DIR="$$HOME/.nvm" && ( \
-		git clone https://github.com/creationix/nvm.git "$$NVM_DIR"; \
-		cd "$$NVM_DIR"; \
-		git checkout -q `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)` \
-		) && \. "$$NVM_DIR/nvm.sh"; \
-		echo ". $$USER_DOTFILE_PATH/shell/zsh/autoload-nvmrc" >> ~/.zshrc; \
-		echo done; \
-		else \
-		echo 'already installed'; \
-		fi
-
+# TODO: maybe install `fnm` for linux/windows
 
 zsh-rc:
 	@printf '>> installing zshrc...'
@@ -168,7 +154,7 @@ xcode-select:
 
 mac: xcode-select brew
 	# anaconda
-	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm nvm tree
+	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree
 	$(INS) --cask linearmouse hiddenbar iterm2 raycast
 
 mac-dev:

@@ -136,4 +136,11 @@ source ${USER_DOTFILE_PATH}/shell/zsh/env
 
 [ -f $HOME/.cargo/env ] && source "$HOME/.cargo/env"
 
+if which fnm >& /dev/null; then
+  eval "$(fnm env --use-on-cd)"
+  # override default FNM_NODE_DIST
+  export FNM_NODE_DIST=https://npmmirror.com/mirrors/node
+  rehash
+fi
+
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
