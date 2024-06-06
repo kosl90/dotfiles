@@ -22,5 +22,5 @@ fi
 unset AUTOJUMP_PATH
 
 export PATH="$HOME/depot_tools:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-# export BAT_THEME="Visual Studio Dark+"
-export BAT_THEME="TwoDark" # base16-256
+export BAT_THEME="Visual Studio Dark+"
+# export BAT_THEME="TwoDark" # base16-256

@@ -55,7 +55,8 @@
 	line-numbers = true
 	features = side-by-side decorations
 	light = false # set to true if you're in a terminal w/ a light background color
-	syntax-theme = "TwoDark" #"Monokai Extended"
+	syntax-theme = "Visual Studio Dark+" #"TwoDark" #"Monokai Extended"
+	# syntax-theme = "TwoDark" #"Monokai Extended"
 	plus-style = "syntax #3CB371"
 [log]
 	decorate = true
