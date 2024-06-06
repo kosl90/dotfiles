@@ -44,7 +44,7 @@
 	default = current
 [core]
 	safecrlf = true
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore_global
 	pager = delta
 	ignorecase = false
