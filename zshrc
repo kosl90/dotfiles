@@ -124,9 +124,6 @@ fi
 
 # Customize to your needs...
 
-# source $ZSH/custom/incr*.zsh
-# source $ZSH/incr*.zsh
-
 if [[ -s '/etc/zsh_command_not_found' ]]; then
   source '/etc/zsh_command_not_found'
 fi
