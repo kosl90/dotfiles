@@ -1,0 +1,33 @@
+{
+	"name": "Vimium C",
+	"@time": "2024/6/12 19:20:10",
+	"time": 1718191210294,
+	"environment": {
+		"extension": "1.99.994",
+		"platform": "mac",
+		"chromium": 125
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://excalidraw.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.notion.so/"
+		}
+	],
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"map s scrollDown",
+		"map w scrollUp",
+		"map e scrollPageUp",
+		""
+	],
+	"vimSync": true
+}
