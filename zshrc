@@ -53,6 +53,8 @@ zsh-completions
 zsh-autosuggestions
 F-Sy-H
 
+fzf-tab
+
 pnpm-shell-completion
 
 jsontools
@@ -81,7 +83,6 @@ yarn
 golang
 
 rust
-ripgrep
 
 # tools
 extract
@@ -141,3 +142,6 @@ if which fnm >& /dev/null; then
 fi
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && alias fzf-preview='fzf --preview "fzf-preview.sh {}"' && compdef _gnu_generic fzf
+

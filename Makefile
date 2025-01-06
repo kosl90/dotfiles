@@ -93,6 +93,7 @@ zsh-plugins:
 	@$(call installZshPlugin,https://github.com/z-shell/F-Sy-H)
 	@$(call installZshPlugin,https://github.com/zsh-users/zsh-completions)
 	@$(call installZshPlugin,https://github.com/paulirish/git-open)
+	@$(call installZshPlugin,https://github.com/Aloxaf/fzf-tab)
 
 zsh-oh-my-zsh:
 	@printf '>> installing oh-my-zsh...'; \
