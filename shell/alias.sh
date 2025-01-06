@@ -81,7 +81,7 @@ if which bat >&/dev/null; then
   alias cat=bat
 fi
 
-if which pnpm >&/dev/null; then
+# if which pnpm >&/dev/null; then
     alias pn=pnpm
     alias pni="pnpm install"
     alias i="pnpm install"
@@ -90,6 +90,6 @@ if which pnpm >&/dev/null; then
     alias pns="pnpm start"
     alias d="pnpm dev"
     alias pnv="pnpm serve"
-fi
+# fi
 
 # alias sin="dbus-send --dest=com.deepin.dde.dock --print-reply --type=method_call /com/deepin/dde/dock com.deepin.dde.dock.ShowInspector"
