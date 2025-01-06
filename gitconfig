@@ -48,6 +48,7 @@
 	excludesfile = ~/.gitignore_global
 	pager = delta
 	ignorecase = false
+	autocrlf = false
 [interactive]
 	diffFilter = delta --color-only
 [delta]
