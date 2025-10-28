@@ -113,6 +113,7 @@ kubectl
 )
 
 [ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
+[ -f /opt/homebrew/share/zsh/site-functions/ ] && fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
 fpath+=$USER_DOTFILE_PATH/shell/zsh/completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
