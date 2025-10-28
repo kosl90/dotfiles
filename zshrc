@@ -71,6 +71,7 @@ svn
 # python tools
 python
 pip
+uv
 
 # node tools
 node
