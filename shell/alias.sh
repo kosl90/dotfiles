@@ -66,8 +66,12 @@ alias mkd='make dist'
 
 
 # alias for vim
-alias vim='vim -p'
-alias vi=vim
+if which nvim >& /dev/null; then
+  alias vi='nvim';
+elif which vim >& /dev/null; then
+  alias vim='vim -p';
+  alias vi=vim;
+fi
 
 # alias for git
 alias glg="git log --graph --decorate"
