@@ -9,6 +9,7 @@
 # (this can be changed by modifying the channel_alias key; see below).
 # The default is just 'defaults'.
 channels:
+  - conda-forge
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
