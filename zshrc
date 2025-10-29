@@ -12,18 +12,12 @@ ZSH_THEME='candy'
 # ZSH_THEME="nebirhos" # rvm
 # ZSH_THEME="sunaku"
 
-if [[ $USE_PROMPT = "p10k" ]]; then
-  ZSH_THEME="powerlevel10k/powerlevel10k"
-  # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-  # Initialization code that may require console input (password prompts, [y/n]
-  # confirmations, etc.) must go above this block; everything else may go below.
-  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-  fi
-
-  # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+BREW=/opt/homebrew/bin/brew
+if [ -f "${BREW}" ]; then
+  fpath+=("$(${BREW} --prefix)/share/zsh/site-functions")
 fi
+
+source ${USER_DOTFILE_PATH}/shell/zsh/prompt
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -114,7 +108,6 @@ kubectl
 )
 
 [ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
-[ -f /opt/homebrew/share/zsh/site-functions/ ] && fpath=(/opt/homebrew/share/zsh/site-functions/ $fpath)
 fpath+=$USER_DOTFILE_PATH/shell/zsh/completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 

@@ -76,11 +76,12 @@ zsh-rc:
 	@[ -f $${HOME}/.zshrc ] || \
 		(echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
 		echo '### CONFIGURATION SWITCH ###' >> $${HOME}/.zshrc; \
-		echo 'USE_PROMPT="" # "p10k" | "pure" | "starship"' >> $${HOME}/.zshrc; \
+		echo 'USE_PROMPT="p10k" # "p10k" | "pure" | "starship"' >> $${HOME}/.zshrc; \
 		echo 'USE_MANPAGER="bat" # "bat" | "nvim"' >> $${HOME}/.zshrc; \
 		echo '' >> $${HOME}/.zshrc; \
 		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
-		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc;)
+		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc;) \
+		ln -sf $(PWD)/shell/zsh/p10k.zsh ~/.p10k.zsh
 	@echo 'done'
 
 
@@ -95,6 +96,7 @@ zsh-plugins:
 	@$(call installZshPlugin,https://github.com/zsh-users/zsh-completions)
 	@$(call installZshPlugin,https://github.com/paulirish/git-open)
 	@$(call installZshPlugin,https://github.com/Aloxaf/fzf-tab)
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 zsh-oh-my-zsh:
 	@printf '>> installing oh-my-zsh...'; \
