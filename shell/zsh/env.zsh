@@ -1,7 +1,7 @@
-. ${USER_DOTFILE_PATH}/shell/zsh/autochange-git-committer
+. ${USER_DOTFILE_PATH}/shell/zsh/autochange-git-committer.zsh
 
 # echo "USE_MANPAGER: ${USE_MANPAGER}"
-#
+
 if [ "$USE_MANPAGER" = "bat" ]; then
   if which bat >& /dev/null; then
       # echo set MANPAGER
@@ -11,6 +11,5 @@ if [ "$USE_MANPAGER" = "bat" ]; then
 fi
 
 if [ "$USE_MANPAGER" = "nvim" ]; then
-  echo "use nvim MANPAGER"
   export MANPAGER="nvim +Man!"
 fi

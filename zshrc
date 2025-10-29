@@ -17,7 +17,7 @@ if [ -f "${BREW}" ]; then
   fpath+=("$(${BREW} --prefix)/share/zsh/site-functions")
 fi
 
-source ${USER_DOTFILE_PATH}/shell/zsh/prompt
+source ${USER_DOTFILE_PATH}/shell/zsh/prompt.zsh
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -126,7 +126,7 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
 fi
 
 source $USER_DOTFILE_PATH/shell/shellrc
-source ${USER_DOTFILE_PATH}/shell/zsh/env
+source ${USER_DOTFILE_PATH}/shell/zsh/env.zsh
 
 [ -f $HOME/.cargo/env ] && source "$HOME/.cargo/env"
 
