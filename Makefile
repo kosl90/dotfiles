@@ -168,10 +168,12 @@ squirrel:
 squirrel-custom-pure:
 	ln -s ~/.dotfiles/rime-custom/default.custom.yaml ~/Library/Rime/default.custom.yaml
 	ln -s ~/.dotfiles/rime-custom/squirrel.custom.yaml ~/Library/Rime/squirrel.custom.yaml
+	ln -s ~/.dotfiles/rime-custom/rime_ice.schema.custom.yaml ~/Library/Rime/rime_ice.custom.yaml
 
 squirrel-custom-pure-f:
 	ln -sf ~/.dotfiles/rime-custom/default.custom.yaml ~/Library/Rime/default.custom.yaml
 	ln -sf ~/.dotfiles/rime-custom/squirrel.custom.yaml ~/Library/Rime/squirrel.custom.yaml
+	ln -sf ~/.dotfiles/rime-custom/rime_ice.schema.custom.yaml ~/Library/Rime/rime_ice.custom.yaml
 
 squirrel-custom: squirrel squirrel-custom-pure
 
