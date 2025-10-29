@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "2024/6/12 19:20:10",
-	"time": 1718191210294,
+	"@time": "2025/2/28 11:34:16",
+	"time": 1740713656257,
 	"environment": {
-		"extension": "1.99.994",
+		"extension": "2.11.3",
 		"platform": "mac",
-		"chromium": 125
+		"chromium": 133
 	},
 	"exclusionRules": [
 		{
