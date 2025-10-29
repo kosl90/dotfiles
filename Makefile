@@ -163,7 +163,7 @@ mac-dev:
 	$(INS) --cask wireshark
 
 squirrel:
-	ln -s ~/.dotfiles/Rime/ ~/Library/Rime
+	ln -s ~/.dotfiles/rime-ice/ ~/Library/Rime
 
 squirrel-custom-pure:
 	ln -s ~/.dotfiles/rime-custom/default.custom.yaml ~/Library/Rime/default.custom.yaml
