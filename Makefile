@@ -29,6 +29,7 @@ endif
 INS?=$(DETECT_INS)
 
 files=toprc tmux.conf gitconfig rvmrc gemrc fehbg gtkrc-2.0 gitignore_global gitmessage condarc
+mac_files=tmux.conf gitconfig gitignore_global gitmessage condarc
 
 ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 PIP_CONFIG=$${HOME}/.config/pip
@@ -76,7 +77,7 @@ zsh-rc:
 		(echo '########## USER DOTFILE CONFIGURATION ##########' >> $${HOME}/.zshrc; \
 		echo '### CONFIGURATION SWITCH ###' >> $${HOME}/.zshrc; \
 		echo 'USE_PROMPT="" # "p10k" | "pure" | "starship"' >> $${HOME}/.zshrc; \
-		echo 'USE_BAT_FOR_MANPAGE=true' >> $${HOME}/.zshrc; \
+		echo 'USE_MANPAGER="bat" # "bat" | "nvim"' >> $${HOME}/.zshrc; \
 		echo '' >> $${HOME}/.zshrc; \
 		echo 'export USER_DOTFILE_PATH=${USER_DOTFILE_PATH}' >> $${HOME}/.zshrc; \
 		echo '. $${USER_DOTFILE_PATH}/zshrc' >> $${HOME}/.zshrc;)
@@ -153,7 +154,7 @@ brew:
 xcode-select:
 	xcode-select --install
 
-mac: xcode-select brew
+mac: xcode-select brew config-files zsh-config squirrel
 	# anaconda
 	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree go
 	$(INS) --cask linearmouse hiddenbar kitty iterm2 raycast squirrel-app
