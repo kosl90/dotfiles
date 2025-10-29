@@ -155,12 +155,25 @@ xcode-select:
 
 mac: xcode-select brew
 	# anaconda
-	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree
-	$(INS) --cask linearmouse hiddenbar kitty iterm2 raycast
+	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree go
+	$(INS) --cask linearmouse hiddenbar kitty iterm2 raycast squirrel-app
 
 mac-dev:
 	$(INS) pkg-config cmake cmake-docs
 	$(INS) --cask wireshark
+
+squirrel:
+	ln -s ~/.dotfiles/Rime/ ~/Library/Rime
+
+squirrel-custom-pure:
+	ln -s ~/.dotfiles/rime-custom/default.custom.yaml ~/Library/Rime/default.custom.yaml
+	ln -s ~/.dotfiles/rime-custom/squirrel.custom.yaml ~/Library/Rime/squirrel.custom.yaml
+
+squirrel-custom-pure-f:
+	ln -sf ~/.dotfiles/rime-custom/default.custom.yaml ~/Library/Rime/default.custom.yaml
+	ln -sf ~/.dotfiles/rime-custom/squirrel.custom.yaml ~/Library/Rime/squirrel.custom.yaml
+
+squirrel-custom: squirrel squirrel-custom-pure
 
 kitty-config:
 	@mkdir -p ${HOME}/.config/kitty/
