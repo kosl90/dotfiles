@@ -93,7 +93,8 @@ docker
 docker-compose
 debian
 nmap
-autojump
+# autojump
+zoxide
 
 kubectl
 
