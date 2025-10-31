@@ -49,7 +49,7 @@ F-Sy-H
 
 fzf-tab
 
-pnpm-shell-completion
+# pnpm-shell-completion
 
 jsontools
 encode64
@@ -110,6 +110,8 @@ kubectl
 [ -f /usr/share/zsh/vendor-completions/ ] && fpath=(/usr/share/zsh/vendor-completions/ $fpath)
 fpath+=$USER_DOTFILE_PATH/shell/zsh/completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+[ -f $HOME/.zsh-completions ] || mkdir -p $HOME/.zsh-completions
+fpath+=$HOME/.zsh-completions
 
 source $ZSH/oh-my-zsh.sh
 
