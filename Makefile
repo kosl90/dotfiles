@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc, zsh-rc, mac, xcode-select, brew, phantom
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc, zsh-rc, mac, xcode-select, brew, phantom, git-auth, mac-config-files
 
 OS:=$(shell uname)
 ifneq (,$(wildcard /etc/os-release))
@@ -29,7 +29,7 @@ endif
 INS?=$(DETECT_INS)
 
 files=toprc tmux.conf gitconfig rvmrc gemrc fehbg gtkrc-2.0 gitignore_global gitmessage condarc
-mac_files=tmux.conf gitconfig gitignore_global gitmessage condarc
+mac_files=toprc tmux.conf gitconfig gemrc gitignore_global gitmessage condarc
 
 ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 PIP_CONFIG=$${HOME}/.config/pip
@@ -57,17 +57,31 @@ define installConfig
   ln -fs ${USER_DOTFILE_PATH}/$(1) ~/.$(1);
 endef
 
+GIT_AUTH_CONFIG=$${HOME}/.config
+
+git-auth:
+	@printf '>> installing git auth config...'
+	@mkdir -p ${GIT_AUTH_CONFIG}
+	@ln -fs `pwd`/gitauthor.json  ${GIT_AUTH_CONFIG}/gitauthor.json
+	@echo 'done'
+
 pip:
 	@printf '>> installing pip config...'
 	@mkdir -p ${PIP_CONFIG}
 	@ln -fs `pwd`/pip.conf ${PIP_CONFIG}/pip.conf
 	@echo 'done'
 
-config-files: pip
+config-files: pip git-auth
 	@printf '>> installing other config files...'
 	@$(foreach file, $(files), $(call installConfig,$(file)))
 	@cp npmrc ~/.npmrc
 	@echo 'done'
+
+mac-config-files: pip git-auth
+	@printf '>> installing config files for mac...'
+	@$(foreach file, $(mac_files), $(call installConfig, $(file)))
+	@echo 'done'
+
 
 # TODO: maybe install `fnm` for linux/windows
 
@@ -96,6 +110,7 @@ zsh-plugins:
 	@$(call installZshPlugin,https://github.com/zsh-users/zsh-completions)
 	@$(call installZshPlugin,https://github.com/paulirish/git-open)
 	@$(call installZshPlugin,https://github.com/Aloxaf/fzf-tab)
+	@$(call installZshPlugin,https://github.com/g-plane/pnpm-shell-completion)
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 zsh-oh-my-zsh:
@@ -156,7 +171,7 @@ brew:
 xcode-select:
 	xcode-select --install
 
-mac: xcode-select brew config-files zsh-config squirrel
+mac: xcode-select brew mac-config-files zsh-config squirrel
 	# anaconda
 	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree go
 	$(INS) --cask linearmouse hiddenbar kitty iterm2 raycast squirrel-app
@@ -181,8 +196,9 @@ squirrel-custom-pure-f:
 squirrel-custom: squirrel squirrel-custom-pure
 
 kitty-config:
-	@mkdir -p ${HOME}/.config/kitty/
-	@ln -fs ${USER_DOTFILE_PATH}/kitty.conf ${HOME}/.config/kitty/kitty.conf
+	@mkdir -p ${HOME}/.config
+	@ln -fs ${USER_DOTFILE_PATH}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
+	@ln -fs ${USER_DOTFILE_PATH}/kitty/Catppuccin-Mocha.conf ${HOME}/.config/kitty/Catppuccin-Mocha.conf
 
 
 phantom:
