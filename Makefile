@@ -1,4 +1,4 @@
-.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc, zsh-rc, mac, xcode-select, brew, phantom, git-auth, mac-config-files
+.PHONY: all, soft-gui, soft-no-gui, no-gui, zsh-config, vim-config, config-files, chsh, xmonad, pip, bash-rc, shellrc, zsh-rc, mac, xcode-select, brew, phantom, git-auth, mac-config-files, rust
 
 OS:=$(shell uname)
 ifneq (,$(wildcard /etc/os-release))
@@ -200,6 +200,15 @@ kitty-config:
 	@ln -fs ${USER_DOTFILE_PATH}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
 	@ln -fs ${USER_DOTFILE_PATH}/kitty/Catppuccin-Mocha.conf ${HOME}/.config/kitty/Catppuccin-Mocha.conf
 
+
+rust:
+	@echo 'install rustup'
+	@curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	@echo 'restore cargo config.toml'
+	@mkdir -p ${HOME}/.config/cargo && ln -fs ${USER_DOTFILE_PATH}/rust/cargo/config.toml ${HOME}/.config/cargo/config.toml
+	@echo 'install cargo-binstall'
+	@cargo install cargo-binstall
+	# @cargo binstall wasm-pack
 
 phantom:
 
