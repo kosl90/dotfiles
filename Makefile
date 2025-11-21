@@ -26,8 +26,8 @@ endif
 
 INS?=$(DETECT_INS)
 
-files=toprc tmux.conf gitconfig rvmrc gemrc fehbg gtkrc-2.0 gitignore_global gitmessage condarc
-mac_files=toprc tmux.conf gitconfig gemrc gitignore_global gitmessage condarc
+files=toprc tmux.conf rvmrc gemrc fehbg gtkrc-2.0 gitignore_global gitmessage condarc
+mac_files=toprc tmux.conf gemrc gitignore_global gitmessage condarc
 
 ZCP=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/plugins
 ZCT=$${ZSH_CUSTOM:-$${HOME}/.oh-my-zsh/custom}/themes
@@ -94,15 +94,24 @@ pip:
 	@echo 'done'
 
 
+.PHONY: git-config
+git-config: git-auth
+	@printf '>> installing git config...'
+	@cp -rf ${USER_DOTFILE_PATH}/gitconfig ~/.gitconfig
+	@$(call installConfig,gitmessage)
+	@$(call installConfig,gitignore_global)
+	@echo 'done'
+
+
 .PHONY: config-files
-config-files: pip git-auth
+config-files: pip git-config
 	@printf '>> installing other config files...'
 	@$(foreach file, $(files), $(call installConfig,$(file)))
 	@cp npmrc ~/.npmrc
 	@echo 'done'
 
 .PHONY: mac-config-files
-mac-config-files: pip git-auth
+mac-config-files: pip git-config
 	@printf '>> installing config files for mac...'
 	@$(foreach file, $(mac_files), $(call installConfig, $(file)))
 	@echo 'done'
