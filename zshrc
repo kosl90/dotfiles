@@ -14,7 +14,7 @@ ZSH_THEME='candy'
 
 BREW=/opt/homebrew/bin/brew
 if [ -f "${BREW}" ]; then
-  fpath+=("$(${BREW} --prefix)/share/zsh/site-functions")
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 source ${USER_DOTFILE_PATH}/shell/zsh/prompt.zsh
