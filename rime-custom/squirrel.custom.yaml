@@ -44,6 +44,17 @@ patch:
       candidate_text_color: 0xe9e9ea # 预选项文字颜色
       inline_preedit: true # 拼音位于： 候选框 false | 行内 true
 
+  # app_options key 的查找方法(来至 Gemini 的回答)
+  # 1. 使用命令行(最快)
+  #   `mdls -name kMDItemCFBundleIdentifier <path to app>`
+  # 例如 `mdls -name kMDItemCFBundleIdentifier /Applications/Visual\ Studio\ Code.app`
+  # 2. 使用命令查询当前前台激活的程序(最准)
+  # `sleep 3 && osascript -e 'id of app (path to frontmost application as text)'`
+  # 在终端运行上述命令后，3秒内将要查询的应用切换到前台激活即可
+  # 3. 查看 info.plist
+  # 查看应用包内容，找到 Contents 目录中找到 info.plist 文件，打开该文件搜索 CFBundleIdentifier key
   app_options:
     com.mitchellh.ghostty:
+      ascii_mode: true
+    net.kovidgoyal.kitty:
       ascii_mode: true
