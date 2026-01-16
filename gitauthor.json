@@ -3,5 +3,15 @@
 		"path_prefix": "$HOME/workspace/ks",
 		"name": "liliqiang",
 		"email": "liliqiang@kingsoft.com"
-	}
+	},
+  {
+    "path_prefix": "$HOME/.dotfiles",
+    "name": "kosl90",
+    "email": "kos1990l@gmail.com"
+  },
+  {
+    "path_prefix": "",
+    "name": "kosl90",
+    "email": "kos1990l@gmail.com"
+  }
 ]

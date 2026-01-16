@@ -7,10 +7,10 @@ import sys
 CONFIG_FILE = os.path.expandvars('$HOME/.config/gitauthor.json')
 
 def outputShell(name, email):
-    print('export GIT_AUTHOR_NAME={}'.format(name));
-    print('export GIT_AUTHOR_EMAIL={}'.format(email));
-    print('export GIT_COMMITTER_NAME={}'.format(name));
-    print('export GIT_COMMITTER_EMAIL={}'.format(email));
+    print('export GIT_AUTHOR_NAME={}'.format(name))
+    print('export GIT_AUTHOR_EMAIL={}'.format(email))
+    print('export GIT_COMMITTER_NAME={}'.format(name))
+    print('export GIT_COMMITTER_EMAIL={}'.format(email))
 
 def readConfig(f):
     import json
@@ -27,7 +27,7 @@ def main(projectPath):
     if not os.path.exists(CONFIG_FILE):
         sys.exit(1)
 
-    c = readConfig(CONFIG_FILE);
+    c = readConfig(CONFIG_FILE)
 
     firstGitAuthorConfig = findAuthorConfig(projectPath, c)
 
