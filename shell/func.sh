@@ -1,12 +1,12 @@
 function cman() {
     env \
-        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-        LESS_TERMCAP_md=$(printf "\e[1;31m") \
-        LESS_TERMCAP_me=$(printf "\e[0m") \
-        LESS_TERMCAP_se=$(printf "\e[0m") \
-        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-        LESS_TERMCAP_ue=$(printf "\e[0m") \
-        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        LESS_TERMCAP_mb="$(printf '\e[1;31m')" \
+        LESS_TERMCAP_md="$(printf '\e[1;31m')" \
+        LESS_TERMCAP_me="$(printf '\e[0m')" \
+        LESS_TERMCAP_se="$(printf '\e[0m')" \
+        LESS_TERMCAP_so="$(printf '\e[1;44;33m')" \
+        LESS_TERMCAP_ue="$(printf '\e[0m')" \
+        LESS_TERMCAP_us="$(printf '\e[1;32m')" \
         man "$@"
 }
 
@@ -14,12 +14,11 @@ function cman() {
 function vman() {
     local VI=/usr/bin/vim
     if [ -f /usr/local/bin/vim ]; then
-        local=/usr/local/bin/vim
+        local VI=/usr/local/bin/vim
     fi
 
     if [ $# -eq 1 ]; then
-        /usr/bin/whatis $@ > /dev/null
-        if [ $? -eq 0 ]; then
+        if /usr/bin/whatis "$@" > /dev/null; then
             $VI -c "Man $*" -c "silent! only" -c "nmap q :q<cr>"
         else
             /usr/bin/man "$@"
@@ -64,7 +63,7 @@ function groot() {
 }
 
 function version() {
-	dpkg -p $1 | grep -i version
+	dpkg -p "$1" | grep -i version
 }
 
 function dlog {
@@ -98,32 +97,13 @@ EOF
 }
 
 function add_to_user_local_bin() {
-    target=`pwd`
-    if ! [ -z $1 ]
+    target=$(pwd)
+    if ! [ -z "$1" ]
     then
-        target=`realpath $1`
+      target=$(realpath "$1")
     fi
-    ln -sf $target $HOME/.local/bin
+    ln -sf "$target" "$HOME/.local/bin"
     src # oh-my-zsh zsh-reload plugin
-}
-
-function activate_conda() {
-    # added by Miniconda3 4.5.12 installer
-    # >>> conda init >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$(CONDA_REPORT_ERRORS=false "$HOME/miniconda3/bin/conda" shell.zsh hook 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "$HOME/miniconda3/etc/profile.d/conda.sh"
-            CONDA_CHANGEPS1=true conda activate ${1:-base}
-        else
-            export PATH="/Users/codemao/miniconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda init <<<
 }
 
 function update-pandafan() {
@@ -133,21 +113,21 @@ function update-pandafan() {
     fi
 
     local f=${HOME}/.config/clash/config.yaml
-    if [ -f $f ]; then
+    if [ -f "$f" ]; then
         local backupConfig=$HOME/.config/clash/config.old.yaml
         echo -n "backup file exists, the old backup file will be overwriten[Y/n]: "
-        read yesOrNo
+        read -r yesOrNo
         yesOrNo=${yesOrNo:-"y"}
         if [[ $yesOrNo =~ [yY] ]];
         then
             echo "backup the old configuration to ${backupConfig}"
-            cp -f $f ${backupConfig}
+            cp -f "$f" "${backupConfig}"
         else
             echo "cancel update"
             return
         fi
     fi
-    wget --output-document $f ${PANDAFAN_CONFIG_URL}
+    wget --output-document "$f" "${PANDAFAN_CONFIG_URL}"
 }
 
 function findRcPackages() {
@@ -161,7 +141,7 @@ function useClash() {
 }
 
 function useNoClash() {
-    export HTTP_PROXY= HTTPS_PROXY= ALL_PROXY= GLOBAL_AGENT_HTTP_PROXY= GLOBAL_AGENT_HTTPS_PROXY=
+    export HTTP_PROXY='' HTTPS_PROXY='' ALL_PROXY='' GLOBAL_AGENT_HTTP_PROXY='' GLOBAL_AGENT_HTTPS_PROXY=''
     unset HTTP_PROXY HTTPS_PROXY ALL_PROXY GLOBAL_AGENT_HTTP_PROXY GLOBAL_AGENT_HTTPS_PROXY
 }
 
@@ -169,3 +149,16 @@ function useNoProxy() {
     useNoClash
 }
 
+function useSelfGitConfig() {
+  export GIT_AUTHOR_NAME=kosl90
+  export GIT_AUTHOR_EMAIL=kos1990l@gmail.com
+  export GIT_COMMITTER_NAME=kosl90
+  export GIT_COMMITTER_EMAIL=kos1990l@gmail.com
+}
+
+function useKsGitConfig() {
+  export GIT_AUTHOR_NAME=liliqiang
+  export GIT_AUTHOR_EMAIL=liliqiang@kingsoft.com
+  export GIT_COMMITTER_NAME=liliqiang
+  export GIT_COMMITTER_EMAIL=liliqiang@kingsoft.com
+}

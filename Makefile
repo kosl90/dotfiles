@@ -235,7 +235,7 @@ xcode-select:
 .PHONY: mac
 mac: xcode-select brew mac-config-files zsh-config squirrel
 	# anaconda
-	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree go
+	$(INS) jq yq gron pure bat delta fzf vim fd eza hyperfine tmux ripgrep pnpm fnm tree go serie lazygit
 	$(INS) --cask linearmouse hiddenbar kitty iterm2 raycast squirrel-app
 
 
@@ -287,6 +287,10 @@ rust:
 	@cargo install cargo-binstall
 	# @cargo binstall wasm-pack
 
+
+.PHONY: nvim
+nvim:
+	@echo TODO
 
 .PHONY: phantom
 phantom:
