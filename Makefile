@@ -270,9 +270,11 @@ squirrel-custom: squirrel squirrel-custom-pure
 
 .PHONY: kitty-config
 kitty-config:
-	@mkdir -p ${HOME}/.config
+	@mkdir -p ${HOME}/.config/kitty
 	@ln -fs ${USER_DOTFILE_PATH}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
 	@ln -fs ${USER_DOTFILE_PATH}/kitty/Catppuccin-Mocha.conf ${HOME}/.config/kitty/Catppuccin-Mocha.conf
+	@ln -fs ${USER_DOTFILE_PATH}/kitty/kitty-icon/build/neue_azure.icns ${HOME}/.config/kitty/kitty.app.icns
+	@ln -fs ${USER_DOTFILE_PATH}/kitty/kitty-icon/build/neue_azure.iconset/icon_32x32.png ${HOME}/.config/kitty/kitty.app.png
 
 
 .PHONY: rust
