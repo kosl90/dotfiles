@@ -56,6 +56,7 @@
     # =========================[ Line #2 ]=========================
     newline                   # \n
     virtualenv                # python virtual environment
+    anaconda                  # conda environment
     prompt_char               # prompt symbol
   )
 
@@ -97,8 +98,13 @@
   # Grey Python Virtual Environment.
   typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=$grey
   # Don't show Python version.
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=true
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
+
+  # Grey Anaconda/Conda Environment.
+  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND=$grey
+  typeset -g POWERLEVEL9K_ANACONDA_SHOW_PYTHON_VERSION=true
+  typeset -g POWERLEVEL9K_ANACONDA_{LEFT,RIGHT}_DELIMITER=
 
   # Blue current directory.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
