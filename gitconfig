@@ -47,6 +47,7 @@
 	pager = delta
 	ignorecase = false
 	autocrlf = false
+	quotepath = false
 [interactive]
 	diffFilter = delta --color-only
 [delta]
